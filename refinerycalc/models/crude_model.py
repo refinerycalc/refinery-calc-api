@@ -47,7 +47,9 @@ class CrudeModel(object):
         'allocation': 'CrudeAllocation',
         'display_order': 'int',
         'country': 'str',
-        'rcci': 'float'
+        'rcci': 'float',
+        'marker_crude': 'str',
+        'is_marker_crude': 'bool'
     }
 
     attribute_map = {
@@ -70,10 +72,12 @@ class CrudeModel(object):
         'allocation': 'allocation',
         'display_order': 'displayOrder',
         'country': 'country',
-        'rcci': 'rcci'
+        'rcci': 'rcci',
+        'marker_crude': 'markerCrude',
+        'is_marker_crude': 'isMarkerCrude'
     }
 
-    def __init__(self, id=None, crude_no=None, crude_id=None, name=None, api=None, sulphur=None, value=None, maximum=None, minimum=None, price=None, crude_gpw=None, freight=None, is_available=None, price_date=None, default_price_date=None, crude_type=None, allocation=None, display_order=None, country=None, rcci=None):  # noqa: E501
+    def __init__(self, id=None, crude_no=None, crude_id=None, name=None, api=None, sulphur=None, value=None, maximum=None, minimum=None, price=None, crude_gpw=None, freight=None, is_available=None, price_date=None, default_price_date=None, crude_type=None, allocation=None, display_order=None, country=None, rcci=None, marker_crude=None, is_marker_crude=None):  # noqa: E501
         """CrudeModel - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._crude_no = None
@@ -95,6 +99,8 @@ class CrudeModel(object):
         self._display_order = None
         self._country = None
         self._rcci = None
+        self._marker_crude = None
+        self._is_marker_crude = None
         self.discriminator = None
         if id is not None:
             self.id = id
@@ -136,6 +142,10 @@ class CrudeModel(object):
             self.country = country
         if rcci is not None:
             self.rcci = rcci
+        if marker_crude is not None:
+            self.marker_crude = marker_crude
+        if is_marker_crude is not None:
+            self.is_marker_crude = is_marker_crude
 
     @property
     def id(self):
@@ -556,6 +566,48 @@ class CrudeModel(object):
         """
 
         self._rcci = rcci
+
+    @property
+    def marker_crude(self):
+        """Gets the marker_crude of this CrudeModel.  # noqa: E501
+
+
+        :return: The marker_crude of this CrudeModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._marker_crude
+
+    @marker_crude.setter
+    def marker_crude(self, marker_crude):
+        """Sets the marker_crude of this CrudeModel.
+
+
+        :param marker_crude: The marker_crude of this CrudeModel.  # noqa: E501
+        :type: str
+        """
+
+        self._marker_crude = marker_crude
+
+    @property
+    def is_marker_crude(self):
+        """Gets the is_marker_crude of this CrudeModel.  # noqa: E501
+
+
+        :return: The is_marker_crude of this CrudeModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_marker_crude
+
+    @is_marker_crude.setter
+    def is_marker_crude(self, is_marker_crude):
+        """Sets the is_marker_crude of this CrudeModel.
+
+
+        :param is_marker_crude: The is_marker_crude of this CrudeModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_marker_crude = is_marker_crude
 
     def to_dict(self):
         """Returns the model properties as a dict"""

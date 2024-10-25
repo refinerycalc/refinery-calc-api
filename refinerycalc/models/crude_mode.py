@@ -26,6 +26,7 @@ class CrudeMode(object):
     """
     FIXED = "Fixed"
     OPTIMIZED = "Optimized"
+    FIXEDFLEX = "FixedFlex"
     """
     Attributes:
       swagger_types (dict): The key is attribute name

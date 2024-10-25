@@ -48,6 +48,7 @@ class CalculatorModel(object):
         'refineries': 'list[CalculatorRefineryModel]',
         'prevent_delete': 'bool',
         'is_crude_fav_mode_output_exists': 'bool',
+        'is_aggregate': 'bool',
         'is_crude_valuation': 'bool',
         'is_solving': 'bool',
         'is_cancelled': 'bool',
@@ -96,6 +97,7 @@ class CalculatorModel(object):
         'refineries': 'refineries',
         'prevent_delete': 'preventDelete',
         'is_crude_fav_mode_output_exists': 'isCrudeFavModeOutputExists',
+        'is_aggregate': 'isAggregate',
         'is_crude_valuation': 'isCrudeValuation',
         'is_solving': 'isSolving',
         'is_cancelled': 'isCancelled',
@@ -123,7 +125,7 @@ class CalculatorModel(object):
         'crude_price_reference_crude_price': 'crudePriceReferenceCrudePrice'
     }
 
-    def __init__(self, notes=None, id=None, is_processed=None, is_deleted=None, percent_solved=None, notify_when_solved=None, is_solved=None, solve_status=None, start_time=None, stop_time=None, is_crude_favorability_mode=None, pdf_output=None, excel_output=None, notification_email=None, timed_out=None, excel_output_exists=None, data_source=None, refineries=None, prevent_delete=None, is_crude_fav_mode_output_exists=None, is_crude_valuation=None, is_solving=None, is_cancelled=None, is_engine_mode=None, duration=None, refinery_count=None, created_on=None, name=None, solve_time_remaining=None, modified_on=None, has_scheduled_runs=None, is_time_series=None, time_series_input_file=None, solver_machine_name=None, output_type=None, modified_on_humanize=None, duration_humanized=None, modified_on_ticks=None, calculator_id=None, crude_evaluation_mode=None, is_crude_price_mode=None, setup_complete_percentage=None, is_setup_complete=None, crude_price_reference_crude_id=None, crude_price_reference_crude_price=None):  # noqa: E501
+    def __init__(self, notes=None, id=None, is_processed=None, is_deleted=None, percent_solved=None, notify_when_solved=None, is_solved=None, solve_status=None, start_time=None, stop_time=None, is_crude_favorability_mode=None, pdf_output=None, excel_output=None, notification_email=None, timed_out=None, excel_output_exists=None, data_source=None, refineries=None, prevent_delete=None, is_crude_fav_mode_output_exists=None, is_aggregate=None, is_crude_valuation=None, is_solving=None, is_cancelled=None, is_engine_mode=None, duration=None, refinery_count=None, created_on=None, name=None, solve_time_remaining=None, modified_on=None, has_scheduled_runs=None, is_time_series=None, time_series_input_file=None, solver_machine_name=None, output_type=None, modified_on_humanize=None, duration_humanized=None, modified_on_ticks=None, calculator_id=None, crude_evaluation_mode=None, is_crude_price_mode=None, setup_complete_percentage=None, is_setup_complete=None, crude_price_reference_crude_id=None, crude_price_reference_crude_price=None):  # noqa: E501
         """CalculatorModel - a model defined in Swagger"""  # noqa: E501
         self._notes = None
         self._id = None
@@ -145,6 +147,7 @@ class CalculatorModel(object):
         self._refineries = None
         self._prevent_delete = None
         self._is_crude_fav_mode_output_exists = None
+        self._is_aggregate = None
         self._is_crude_valuation = None
         self._is_solving = None
         self._is_cancelled = None
@@ -211,6 +214,8 @@ class CalculatorModel(object):
             self.prevent_delete = prevent_delete
         if is_crude_fav_mode_output_exists is not None:
             self.is_crude_fav_mode_output_exists = is_crude_fav_mode_output_exists
+        if is_aggregate is not None:
+            self.is_aggregate = is_aggregate
         if is_crude_valuation is not None:
             self.is_crude_valuation = is_crude_valuation
         if is_solving is not None:
@@ -681,6 +686,27 @@ class CalculatorModel(object):
         """
 
         self._is_crude_fav_mode_output_exists = is_crude_fav_mode_output_exists
+
+    @property
+    def is_aggregate(self):
+        """Gets the is_aggregate of this CalculatorModel.  # noqa: E501
+
+
+        :return: The is_aggregate of this CalculatorModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_aggregate
+
+    @is_aggregate.setter
+    def is_aggregate(self, is_aggregate):
+        """Sets the is_aggregate of this CalculatorModel.
+
+
+        :param is_aggregate: The is_aggregate of this CalculatorModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_aggregate = is_aggregate
 
     @property
     def is_crude_valuation(self):

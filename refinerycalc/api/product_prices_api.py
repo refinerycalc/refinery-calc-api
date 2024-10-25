@@ -41,6 +41,7 @@ class ProductPricesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param ProductPriceRequestDateFilterModel body:
         :return: list[ProductPriceModel]
                  If the method is called asynchronously,
                  returns the request thread.
@@ -61,12 +62,13 @@ class ProductPricesApi(object):
         >>> result = thread.get()
 
         :param async_req bool
+        :param ProductPriceRequestDateFilterModel body:
         :return: list[ProductPriceModel]
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = []  # noqa: E501
+        all_params = ['body']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -94,8 +96,14 @@ class ProductPricesApi(object):
         local_var_files = {}
 
         body_params = None
+        if 'body' in params:
+            body_params = params['body']
         # HTTP header `Accept`
         header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
             ['application/json'])  # noqa: E501
 
         # Authentication setting
