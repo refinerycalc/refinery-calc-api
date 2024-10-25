@@ -69,9 +69,16 @@ class CalculatorRefineryModel(object):
         'crude_price_reference_crude_id': 'int',
         'crude_price_reference_crude_price': 'float',
         'historical_price_date': 'datetime',
+        'propylene_mode': 'bool',
+        'pc_naphtha_sales': 'bool',
+        'propylene_price': 'float',
+        'pc_naphtha_sale_price': 'float',
+        'pc_naphtha_sale_vol': 'float',
+        'crude_assay_viewer_mode': 'bool',
         'product_price_unit_type': 'str',
         'apply_all_crude_composition': 'bool',
         'use_design_mode': 'bool',
+        'use_future_mode': 'bool',
         'is_iir_refinery': 'bool',
         'carbon_penalty': 'float',
         'reid_vapor_pressure': 'float',
@@ -88,7 +95,13 @@ class CalculatorRefineryModel(object):
         'user_price_list_date': 'datetime',
         'is_crude_valuation': 'bool',
         'crude_evaluation_mode': 'CrudeEvaluationMode',
-        'is_crude_price_mode': 'bool'
+        'is_crude_price_mode': 'bool',
+        'is_crude_favorability_mode': 'bool',
+        'is_aggregate': 'bool',
+        'refinery_id': 'int',
+        'is_setup_complete': 'bool',
+        'custom_aggregate_name': 'str',
+        'calculator_aggregate_refinery_id': 'int'
     }
 
     attribute_map = {
@@ -133,9 +146,16 @@ class CalculatorRefineryModel(object):
         'crude_price_reference_crude_id': 'crudePriceReferenceCrudeId',
         'crude_price_reference_crude_price': 'crudePriceReferenceCrudePrice',
         'historical_price_date': 'historicalPriceDate',
+        'propylene_mode': 'propyleneMode',
+        'pc_naphtha_sales': 'pcNaphthaSales',
+        'propylene_price': 'propylenePrice',
+        'pc_naphtha_sale_price': 'pcNaphthaSalePrice',
+        'pc_naphtha_sale_vol': 'pcNaphthaSaleVol',
+        'crude_assay_viewer_mode': 'crudeAssayViewerMode',
         'product_price_unit_type': 'productPriceUnitType',
         'apply_all_crude_composition': 'applyAllCrudeComposition',
         'use_design_mode': 'useDesignMode',
+        'use_future_mode': 'useFutureMode',
         'is_iir_refinery': 'isIirRefinery',
         'carbon_penalty': 'carbonPenalty',
         'reid_vapor_pressure': 'reidVaporPressure',
@@ -152,10 +172,16 @@ class CalculatorRefineryModel(object):
         'user_price_list_date': 'userPriceListDate',
         'is_crude_valuation': 'isCrudeValuation',
         'crude_evaluation_mode': 'crudeEvaluationMode',
-        'is_crude_price_mode': 'isCrudePriceMode'
+        'is_crude_price_mode': 'isCrudePriceMode',
+        'is_crude_favorability_mode': 'isCrudeFavorabilityMode',
+        'is_aggregate': 'isAggregate',
+        'refinery_id': 'refineryId',
+        'is_setup_complete': 'isSetupComplete',
+        'custom_aggregate_name': 'customAggregateName',
+        'calculator_aggregate_refinery_id': 'calculatorAggregateRefineryId'
     }
 
-    def __init__(self, crudes_graph=None, constraints_graph=None, hydrogen_graph=None, crude_composition_graph=None, products_graph=None, c_o2_emission_graph=None, gpw_crude_graph=None, id=None, name=None, guid=None, notes=None, is_engine_mode=None, is_time_series=None, has_time_series_file=None, crude_mode=None, end_point_mode=None, intermediate_product=None, kero_mode=None, kero_fix_volume=None, is_user_default=None, excel_output=None, pdf_output=None, calculator=None, refinery=None, units=None, crudes=None, all_crudes=None, light_crudes=None, intermediate_crudes=None, heavy_crudes=None, product_prices=None, end_points=None, user_prices=None, crude_price_output_model=None, is_template=None, outputs=None, is_user_price_data_missing=None, calculator_refinery_crude_ids=None, crude_price_reference_crude_id=None, crude_price_reference_crude_price=None, historical_price_date=None, product_price_unit_type=None, apply_all_crude_composition=None, use_design_mode=None, is_iir_refinery=None, carbon_penalty=None, reid_vapor_pressure=None, blue_hydrogen_percent=None, blue_hydrogen_price=None, green_hydrogen_percent=None, green_hydrogen_price=None, grey_hydrogen_percent=None, grey_hydrogen_price=None, purchase_vgo=None, message=None, success=None, user_price_list_id=None, user_price_list_date=None, is_crude_valuation=None, crude_evaluation_mode=None, is_crude_price_mode=None):  # noqa: E501
+    def __init__(self, crudes_graph=None, constraints_graph=None, hydrogen_graph=None, crude_composition_graph=None, products_graph=None, c_o2_emission_graph=None, gpw_crude_graph=None, id=None, name=None, guid=None, notes=None, is_engine_mode=None, is_time_series=None, has_time_series_file=None, crude_mode=None, end_point_mode=None, intermediate_product=None, kero_mode=None, kero_fix_volume=None, is_user_default=None, excel_output=None, pdf_output=None, calculator=None, refinery=None, units=None, crudes=None, all_crudes=None, light_crudes=None, intermediate_crudes=None, heavy_crudes=None, product_prices=None, end_points=None, user_prices=None, crude_price_output_model=None, is_template=None, outputs=None, is_user_price_data_missing=None, calculator_refinery_crude_ids=None, crude_price_reference_crude_id=None, crude_price_reference_crude_price=None, historical_price_date=None, propylene_mode=None, pc_naphtha_sales=None, propylene_price=None, pc_naphtha_sale_price=None, pc_naphtha_sale_vol=None, crude_assay_viewer_mode=None, product_price_unit_type=None, apply_all_crude_composition=None, use_design_mode=None, use_future_mode=None, is_iir_refinery=None, carbon_penalty=None, reid_vapor_pressure=None, blue_hydrogen_percent=None, blue_hydrogen_price=None, green_hydrogen_percent=None, green_hydrogen_price=None, grey_hydrogen_percent=None, grey_hydrogen_price=None, purchase_vgo=None, message=None, success=None, user_price_list_id=None, user_price_list_date=None, is_crude_valuation=None, crude_evaluation_mode=None, is_crude_price_mode=None, is_crude_favorability_mode=None, is_aggregate=None, refinery_id=None, is_setup_complete=None, custom_aggregate_name=None, calculator_aggregate_refinery_id=None):  # noqa: E501
         """CalculatorRefineryModel - a model defined in Swagger"""  # noqa: E501
         self._crudes_graph = None
         self._constraints_graph = None
@@ -198,9 +224,16 @@ class CalculatorRefineryModel(object):
         self._crude_price_reference_crude_id = None
         self._crude_price_reference_crude_price = None
         self._historical_price_date = None
+        self._propylene_mode = None
+        self._pc_naphtha_sales = None
+        self._propylene_price = None
+        self._pc_naphtha_sale_price = None
+        self._pc_naphtha_sale_vol = None
+        self._crude_assay_viewer_mode = None
         self._product_price_unit_type = None
         self._apply_all_crude_composition = None
         self._use_design_mode = None
+        self._use_future_mode = None
         self._is_iir_refinery = None
         self._carbon_penalty = None
         self._reid_vapor_pressure = None
@@ -218,6 +251,12 @@ class CalculatorRefineryModel(object):
         self._is_crude_valuation = None
         self._crude_evaluation_mode = None
         self._is_crude_price_mode = None
+        self._is_crude_favorability_mode = None
+        self._is_aggregate = None
+        self._refinery_id = None
+        self._is_setup_complete = None
+        self._custom_aggregate_name = None
+        self._calculator_aggregate_refinery_id = None
         self.discriminator = None
         if crudes_graph is not None:
             self.crudes_graph = crudes_graph
@@ -301,12 +340,26 @@ class CalculatorRefineryModel(object):
             self.crude_price_reference_crude_price = crude_price_reference_crude_price
         if historical_price_date is not None:
             self.historical_price_date = historical_price_date
+        if propylene_mode is not None:
+            self.propylene_mode = propylene_mode
+        if pc_naphtha_sales is not None:
+            self.pc_naphtha_sales = pc_naphtha_sales
+        if propylene_price is not None:
+            self.propylene_price = propylene_price
+        if pc_naphtha_sale_price is not None:
+            self.pc_naphtha_sale_price = pc_naphtha_sale_price
+        if pc_naphtha_sale_vol is not None:
+            self.pc_naphtha_sale_vol = pc_naphtha_sale_vol
+        if crude_assay_viewer_mode is not None:
+            self.crude_assay_viewer_mode = crude_assay_viewer_mode
         if product_price_unit_type is not None:
             self.product_price_unit_type = product_price_unit_type
         if apply_all_crude_composition is not None:
             self.apply_all_crude_composition = apply_all_crude_composition
         if use_design_mode is not None:
             self.use_design_mode = use_design_mode
+        if use_future_mode is not None:
+            self.use_future_mode = use_future_mode
         if is_iir_refinery is not None:
             self.is_iir_refinery = is_iir_refinery
         if carbon_penalty is not None:
@@ -341,6 +394,18 @@ class CalculatorRefineryModel(object):
             self.crude_evaluation_mode = crude_evaluation_mode
         if is_crude_price_mode is not None:
             self.is_crude_price_mode = is_crude_price_mode
+        if is_crude_favorability_mode is not None:
+            self.is_crude_favorability_mode = is_crude_favorability_mode
+        if is_aggregate is not None:
+            self.is_aggregate = is_aggregate
+        if refinery_id is not None:
+            self.refinery_id = refinery_id
+        if is_setup_complete is not None:
+            self.is_setup_complete = is_setup_complete
+        if custom_aggregate_name is not None:
+            self.custom_aggregate_name = custom_aggregate_name
+        if calculator_aggregate_refinery_id is not None:
+            self.calculator_aggregate_refinery_id = calculator_aggregate_refinery_id
 
     @property
     def crudes_graph(self):
@@ -1204,6 +1269,132 @@ class CalculatorRefineryModel(object):
         self._historical_price_date = historical_price_date
 
     @property
+    def propylene_mode(self):
+        """Gets the propylene_mode of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The propylene_mode of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._propylene_mode
+
+    @propylene_mode.setter
+    def propylene_mode(self, propylene_mode):
+        """Sets the propylene_mode of this CalculatorRefineryModel.
+
+
+        :param propylene_mode: The propylene_mode of this CalculatorRefineryModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._propylene_mode = propylene_mode
+
+    @property
+    def pc_naphtha_sales(self):
+        """Gets the pc_naphtha_sales of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The pc_naphtha_sales of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._pc_naphtha_sales
+
+    @pc_naphtha_sales.setter
+    def pc_naphtha_sales(self, pc_naphtha_sales):
+        """Sets the pc_naphtha_sales of this CalculatorRefineryModel.
+
+
+        :param pc_naphtha_sales: The pc_naphtha_sales of this CalculatorRefineryModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._pc_naphtha_sales = pc_naphtha_sales
+
+    @property
+    def propylene_price(self):
+        """Gets the propylene_price of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The propylene_price of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._propylene_price
+
+    @propylene_price.setter
+    def propylene_price(self, propylene_price):
+        """Sets the propylene_price of this CalculatorRefineryModel.
+
+
+        :param propylene_price: The propylene_price of this CalculatorRefineryModel.  # noqa: E501
+        :type: float
+        """
+
+        self._propylene_price = propylene_price
+
+    @property
+    def pc_naphtha_sale_price(self):
+        """Gets the pc_naphtha_sale_price of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The pc_naphtha_sale_price of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._pc_naphtha_sale_price
+
+    @pc_naphtha_sale_price.setter
+    def pc_naphtha_sale_price(self, pc_naphtha_sale_price):
+        """Sets the pc_naphtha_sale_price of this CalculatorRefineryModel.
+
+
+        :param pc_naphtha_sale_price: The pc_naphtha_sale_price of this CalculatorRefineryModel.  # noqa: E501
+        :type: float
+        """
+
+        self._pc_naphtha_sale_price = pc_naphtha_sale_price
+
+    @property
+    def pc_naphtha_sale_vol(self):
+        """Gets the pc_naphtha_sale_vol of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The pc_naphtha_sale_vol of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: float
+        """
+        return self._pc_naphtha_sale_vol
+
+    @pc_naphtha_sale_vol.setter
+    def pc_naphtha_sale_vol(self, pc_naphtha_sale_vol):
+        """Sets the pc_naphtha_sale_vol of this CalculatorRefineryModel.
+
+
+        :param pc_naphtha_sale_vol: The pc_naphtha_sale_vol of this CalculatorRefineryModel.  # noqa: E501
+        :type: float
+        """
+
+        self._pc_naphtha_sale_vol = pc_naphtha_sale_vol
+
+    @property
+    def crude_assay_viewer_mode(self):
+        """Gets the crude_assay_viewer_mode of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The crude_assay_viewer_mode of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._crude_assay_viewer_mode
+
+    @crude_assay_viewer_mode.setter
+    def crude_assay_viewer_mode(self, crude_assay_viewer_mode):
+        """Sets the crude_assay_viewer_mode of this CalculatorRefineryModel.
+
+
+        :param crude_assay_viewer_mode: The crude_assay_viewer_mode of this CalculatorRefineryModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._crude_assay_viewer_mode = crude_assay_viewer_mode
+
+    @property
     def product_price_unit_type(self):
         """Gets the product_price_unit_type of this CalculatorRefineryModel.  # noqa: E501
 
@@ -1265,6 +1456,27 @@ class CalculatorRefineryModel(object):
         """
 
         self._use_design_mode = use_design_mode
+
+    @property
+    def use_future_mode(self):
+        """Gets the use_future_mode of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The use_future_mode of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._use_future_mode
+
+    @use_future_mode.setter
+    def use_future_mode(self, use_future_mode):
+        """Sets the use_future_mode of this CalculatorRefineryModel.
+
+
+        :param use_future_mode: The use_future_mode of this CalculatorRefineryModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._use_future_mode = use_future_mode
 
     @property
     def is_iir_refinery(self):
@@ -1622,6 +1834,132 @@ class CalculatorRefineryModel(object):
         """
 
         self._is_crude_price_mode = is_crude_price_mode
+
+    @property
+    def is_crude_favorability_mode(self):
+        """Gets the is_crude_favorability_mode of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The is_crude_favorability_mode of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_crude_favorability_mode
+
+    @is_crude_favorability_mode.setter
+    def is_crude_favorability_mode(self, is_crude_favorability_mode):
+        """Sets the is_crude_favorability_mode of this CalculatorRefineryModel.
+
+
+        :param is_crude_favorability_mode: The is_crude_favorability_mode of this CalculatorRefineryModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_crude_favorability_mode = is_crude_favorability_mode
+
+    @property
+    def is_aggregate(self):
+        """Gets the is_aggregate of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The is_aggregate of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_aggregate
+
+    @is_aggregate.setter
+    def is_aggregate(self, is_aggregate):
+        """Sets the is_aggregate of this CalculatorRefineryModel.
+
+
+        :param is_aggregate: The is_aggregate of this CalculatorRefineryModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_aggregate = is_aggregate
+
+    @property
+    def refinery_id(self):
+        """Gets the refinery_id of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The refinery_id of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._refinery_id
+
+    @refinery_id.setter
+    def refinery_id(self, refinery_id):
+        """Sets the refinery_id of this CalculatorRefineryModel.
+
+
+        :param refinery_id: The refinery_id of this CalculatorRefineryModel.  # noqa: E501
+        :type: int
+        """
+
+        self._refinery_id = refinery_id
+
+    @property
+    def is_setup_complete(self):
+        """Gets the is_setup_complete of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The is_setup_complete of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: bool
+        """
+        return self._is_setup_complete
+
+    @is_setup_complete.setter
+    def is_setup_complete(self, is_setup_complete):
+        """Sets the is_setup_complete of this CalculatorRefineryModel.
+
+
+        :param is_setup_complete: The is_setup_complete of this CalculatorRefineryModel.  # noqa: E501
+        :type: bool
+        """
+
+        self._is_setup_complete = is_setup_complete
+
+    @property
+    def custom_aggregate_name(self):
+        """Gets the custom_aggregate_name of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The custom_aggregate_name of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._custom_aggregate_name
+
+    @custom_aggregate_name.setter
+    def custom_aggregate_name(self, custom_aggregate_name):
+        """Sets the custom_aggregate_name of this CalculatorRefineryModel.
+
+
+        :param custom_aggregate_name: The custom_aggregate_name of this CalculatorRefineryModel.  # noqa: E501
+        :type: str
+        """
+
+        self._custom_aggregate_name = custom_aggregate_name
+
+    @property
+    def calculator_aggregate_refinery_id(self):
+        """Gets the calculator_aggregate_refinery_id of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The calculator_aggregate_refinery_id of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._calculator_aggregate_refinery_id
+
+    @calculator_aggregate_refinery_id.setter
+    def calculator_aggregate_refinery_id(self, calculator_aggregate_refinery_id):
+        """Sets the calculator_aggregate_refinery_id of this CalculatorRefineryModel.
+
+
+        :param calculator_aggregate_refinery_id: The calculator_aggregate_refinery_id of this CalculatorRefineryModel.  # noqa: E501
+        :type: int
+        """
+
+        self._calculator_aggregate_refinery_id = calculator_aggregate_refinery_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""

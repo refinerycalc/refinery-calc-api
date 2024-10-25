@@ -35,7 +35,9 @@ class UnitModel(object):
         'display_order': 'int',
         'is_shutdown': 'bool',
         'can_edit_health_state': 'bool',
-        'health_state': 'HealthState'
+        'health_state': 'HealthState',
+        'refinery_unit_id': 'int',
+        'refinery_unit_name': 'str'
     }
 
     attribute_map = {
@@ -46,10 +48,12 @@ class UnitModel(object):
         'display_order': 'displayOrder',
         'is_shutdown': 'isShutdown',
         'can_edit_health_state': 'canEditHealthState',
-        'health_state': 'healthState'
+        'health_state': 'healthState',
+        'refinery_unit_id': 'refineryUnitId',
+        'refinery_unit_name': 'refineryUnitName'
     }
 
-    def __init__(self, id=None, name=None, rate=None, bias=None, display_order=None, is_shutdown=None, can_edit_health_state=None, health_state=None):  # noqa: E501
+    def __init__(self, id=None, name=None, rate=None, bias=None, display_order=None, is_shutdown=None, can_edit_health_state=None, health_state=None, refinery_unit_id=None, refinery_unit_name=None):  # noqa: E501
         """UnitModel - a model defined in Swagger"""  # noqa: E501
         self._id = None
         self._name = None
@@ -59,6 +63,8 @@ class UnitModel(object):
         self._is_shutdown = None
         self._can_edit_health_state = None
         self._health_state = None
+        self._refinery_unit_id = None
+        self._refinery_unit_name = None
         self.discriminator = None
         if id is not None:
             self.id = id
@@ -76,6 +82,10 @@ class UnitModel(object):
             self.can_edit_health_state = can_edit_health_state
         if health_state is not None:
             self.health_state = health_state
+        if refinery_unit_id is not None:
+            self.refinery_unit_id = refinery_unit_id
+        if refinery_unit_name is not None:
+            self.refinery_unit_name = refinery_unit_name
 
     @property
     def id(self):
@@ -244,6 +254,48 @@ class UnitModel(object):
         """
 
         self._health_state = health_state
+
+    @property
+    def refinery_unit_id(self):
+        """Gets the refinery_unit_id of this UnitModel.  # noqa: E501
+
+
+        :return: The refinery_unit_id of this UnitModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._refinery_unit_id
+
+    @refinery_unit_id.setter
+    def refinery_unit_id(self, refinery_unit_id):
+        """Sets the refinery_unit_id of this UnitModel.
+
+
+        :param refinery_unit_id: The refinery_unit_id of this UnitModel.  # noqa: E501
+        :type: int
+        """
+
+        self._refinery_unit_id = refinery_unit_id
+
+    @property
+    def refinery_unit_name(self):
+        """Gets the refinery_unit_name of this UnitModel.  # noqa: E501
+
+
+        :return: The refinery_unit_name of this UnitModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._refinery_unit_name
+
+    @refinery_unit_name.setter
+    def refinery_unit_name(self, refinery_unit_name):
+        """Sets the refinery_unit_name of this UnitModel.
+
+
+        :param refinery_unit_name: The refinery_unit_name of this UnitModel.  # noqa: E501
+        :type: str
+        """
+
+        self._refinery_unit_name = refinery_unit_name
 
     def to_dict(self):
         """Returns the model properties as a dict"""

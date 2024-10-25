@@ -45,6 +45,7 @@ from refinerycalc.models.end_point_response import EndPointResponse
 from refinerycalc.models.filter_operator import FilterOperator
 from refinerycalc.models.get_calculator_refinery_crudes_response import GetCalculatorRefineryCrudesResponse
 from refinerycalc.models.get_refineries_for_simulation_response import GetRefineriesForSimulationResponse
+from refinerycalc.models.get_simulation_request_model import GetSimulationRequestModel
 from refinerycalc.models.graph import Graph
 from refinerycalc.models.graph_model import GraphModel
 from refinerycalc.models.health_state import HealthState
@@ -59,6 +60,7 @@ from refinerycalc.models.output_type_model import OutputTypeModel
 from refinerycalc.models.output_types import OutputTypes
 from refinerycalc.models.problem_details import ProblemDetails
 from refinerycalc.models.product_price_model import ProductPriceModel
+from refinerycalc.models.product_price_request_date_filter_model import ProductPriceRequestDateFilterModel
 from refinerycalc.models.product_price_uom_type import ProductPriceUomType
 from refinerycalc.models.rate_limit_model import RateLimitModel
 from refinerycalc.models.refinery_change_intermediate_products_request_model import RefineryChangeIntermediateProductsRequestModel
@@ -101,6 +103,8 @@ from refinerycalc.models.simulation_schedule_model import SimulationScheduleMode
 from refinerycalc.models.simulation_schedule_response_model import SimulationScheduleResponseModel
 from refinerycalc.models.simulation_schedule_run_model import SimulationScheduleRunModel
 from refinerycalc.models.solver_output_type import SolverOutputType
+from refinerycalc.models.sort_by import SortBy
+from refinerycalc.models.sort_order import SortOrder
 from refinerycalc.models.time_series_day import TimeSeriesDay
 from refinerycalc.models.time_span import TimeSpan
 from refinerycalc.models.timeseries_advanced_options import TimeseriesAdvancedOptions

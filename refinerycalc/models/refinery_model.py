@@ -54,7 +54,8 @@ class RefineryModel(object):
         'plant_id': 'str',
         'pad_district': 'str',
         'region': 'str',
-        'crude_price_mode_crude_id': 'int'
+        'crude_price_mode_crude_id': 'int',
+        'calculator_aggregate_refinery_id': 'int'
     }
 
     attribute_map = {
@@ -84,10 +85,11 @@ class RefineryModel(object):
         'plant_id': 'plantId',
         'pad_district': 'padDistrict',
         'region': 'region',
-        'crude_price_mode_crude_id': 'crudePriceModeCrudeId'
+        'crude_price_mode_crude_id': 'crudePriceModeCrudeId',
+        'calculator_aggregate_refinery_id': 'calculatorAggregateRefineryId'
     }
 
-    def __init__(self, alternate_ref_id=None, ref_id=None, name=None, is_special_case=None, units=None, created_on=None, created_by=None, modified_on=None, modified_by=None, city=None, country=None, county=None, is_enabled=None, is_aggregate=None, use_in_standard_mode=None, latitude=None, longitude=None, owner_name=None, plant_name=None, parent_name=None, operator=None, market_segment=None, state_or_province=None, plant_id=None, pad_district=None, region=None, crude_price_mode_crude_id=None):  # noqa: E501
+    def __init__(self, alternate_ref_id=None, ref_id=None, name=None, is_special_case=None, units=None, created_on=None, created_by=None, modified_on=None, modified_by=None, city=None, country=None, county=None, is_enabled=None, is_aggregate=None, use_in_standard_mode=None, latitude=None, longitude=None, owner_name=None, plant_name=None, parent_name=None, operator=None, market_segment=None, state_or_province=None, plant_id=None, pad_district=None, region=None, crude_price_mode_crude_id=None, calculator_aggregate_refinery_id=None):  # noqa: E501
         """RefineryModel - a model defined in Swagger"""  # noqa: E501
         self._alternate_ref_id = None
         self._ref_id = None
@@ -116,6 +118,7 @@ class RefineryModel(object):
         self._pad_district = None
         self._region = None
         self._crude_price_mode_crude_id = None
+        self._calculator_aggregate_refinery_id = None
         self.discriminator = None
         if alternate_ref_id is not None:
             self.alternate_ref_id = alternate_ref_id
@@ -171,6 +174,8 @@ class RefineryModel(object):
             self.region = region
         if crude_price_mode_crude_id is not None:
             self.crude_price_mode_crude_id = crude_price_mode_crude_id
+        if calculator_aggregate_refinery_id is not None:
+            self.calculator_aggregate_refinery_id = calculator_aggregate_refinery_id
 
     @property
     def alternate_ref_id(self):
@@ -738,6 +743,27 @@ class RefineryModel(object):
         """
 
         self._crude_price_mode_crude_id = crude_price_mode_crude_id
+
+    @property
+    def calculator_aggregate_refinery_id(self):
+        """Gets the calculator_aggregate_refinery_id of this RefineryModel.  # noqa: E501
+
+
+        :return: The calculator_aggregate_refinery_id of this RefineryModel.  # noqa: E501
+        :rtype: int
+        """
+        return self._calculator_aggregate_refinery_id
+
+    @calculator_aggregate_refinery_id.setter
+    def calculator_aggregate_refinery_id(self, calculator_aggregate_refinery_id):
+        """Sets the calculator_aggregate_refinery_id of this RefineryModel.
+
+
+        :param calculator_aggregate_refinery_id: The calculator_aggregate_refinery_id of this RefineryModel.  # noqa: E501
+        :type: int
+        """
+
+        self._calculator_aggregate_refinery_id = calculator_aggregate_refinery_id
 
     def to_dict(self):
         """Returns the model properties as a dict"""
