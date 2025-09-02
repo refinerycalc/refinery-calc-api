@@ -38,6 +38,9 @@ from refinerycalc.models.crude_model import CrudeModel
 from refinerycalc.models.crude_price import CrudePrice
 from refinerycalc.models.crude_price_mode_crude import CrudePriceModeCrude
 from refinerycalc.models.crude_type import CrudeType
+from refinerycalc.models.custom_aggregate_add_edit_request_model import CustomAggregateAddEditRequestModel
+from refinerycalc.models.custom_aggregate_detail_model import CustomAggregateDetailModel
+from refinerycalc.models.custom_aggregate_refiery_item_model import CustomAggregateRefieryItemModel
 from refinerycalc.models.data_source import DataSource
 from refinerycalc.models.end_point_mode import EndPointMode
 from refinerycalc.models.end_point_model import EndPointModel
@@ -107,6 +110,7 @@ from refinerycalc.models.sort_by import SortBy
 from refinerycalc.models.sort_order import SortOrder
 from refinerycalc.models.time_series_day import TimeSeriesDay
 from refinerycalc.models.time_span import TimeSpan
+from refinerycalc.models.time_travel_setting_request_model import TimeTravelSettingRequestModel
 from refinerycalc.models.timeseries_advanced_options import TimeseriesAdvancedOptions
 from refinerycalc.models.timeseries_crude_reference import TimeseriesCrudeReference
 from refinerycalc.models.timeseries_crude_unit_utilization import TimeseriesCrudeUnitUtilization
