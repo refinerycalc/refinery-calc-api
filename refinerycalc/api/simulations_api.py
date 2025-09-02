@@ -312,7 +312,7 @@ class SimulationsApi(object):
             collection_formats=collection_formats)
 
     def v1_simulations_id_output_get(self, id, **kwargs):  # noqa: E501
-        """Retrieves a OutputModel for the given input simuation Id.  # noqa: E501
+        """Retrieves the RefineryCalculator.Core.Models.OutputTypeModel for the specified simulation ID,   optionally filtering results by output types and their corresponding subtypes (names).  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -320,7 +320,8 @@ class SimulationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: Simulation Id (required)
+        :param str id: The simulation ID. (required)
+        :param str output_types: (Optional) A comma-separated list of output types with optional subtypes (names) to filter the results.    Syntax:   ?outputTypes=[outputType][:subType1|subType2|subType3],[outputType][:subType1|subType2]    Examples:  • ?outputTypes=general:Refinery Name|Location|PADD,economics:Revenue|Total Margin|Net Operating Margin    • ?outputTypes=general:Refinery Name,economics    If not specified, all available output types will be included in the response. Available values: Balance, Complexity, Constraints, CrudeNames, CrudePercent, CrudePricing, CrudeQuality, CrudesAndFeeds, DeleteCategory, Economics, EndPointsF, ExpenseFactors, FCCHydrkConv, FeedsPricing, GasolineBlending, General, Hydrogen, ProductPricing, Products, RefineryLayoutSVG, Sustainability, UnitBalance, CatalystCondition, UnitCo2Emissions, Co2Emissions, GPW, FuelGasOnDemand, FGProduction, FGImport, FGComp, ProductEmissions, PetChemSales, PetChemSalesPrice, CrudeSRYieldsAssayData, CrudeSRYieldSulWt, UnitUtilization, Unspecified
         :return: OutputTypeModel
                  If the method is called asynchronously,
                  returns the request thread.
@@ -333,7 +334,7 @@ class SimulationsApi(object):
             return data
 
     def v1_simulations_id_output_get_with_http_info(self, id, **kwargs):  # noqa: E501
-        """Retrieves a OutputModel for the given input simuation Id.  # noqa: E501
+        """Retrieves the RefineryCalculator.Core.Models.OutputTypeModel for the specified simulation ID,   optionally filtering results by output types and their corresponding subtypes (names).  # noqa: E501
 
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please pass async_req=True
@@ -341,13 +342,14 @@ class SimulationsApi(object):
         >>> result = thread.get()
 
         :param async_req bool
-        :param str id: Simulation Id (required)
+        :param str id: The simulation ID. (required)
+        :param str output_types: (Optional) A comma-separated list of output types with optional subtypes (names) to filter the results.    Syntax:   ?outputTypes=[outputType][:subType1|subType2|subType3],[outputType][:subType1|subType2]    Examples:  • ?outputTypes=general:Refinery Name|Location|PADD,economics:Revenue|Total Margin|Net Operating Margin    • ?outputTypes=general:Refinery Name,economics    If not specified, all available output types will be included in the response. Available values: Balance, Complexity, Constraints, CrudeNames, CrudePercent, CrudePricing, CrudeQuality, CrudesAndFeeds, DeleteCategory, Economics, EndPointsF, ExpenseFactors, FCCHydrkConv, FeedsPricing, GasolineBlending, General, Hydrogen, ProductPricing, Products, RefineryLayoutSVG, Sustainability, UnitBalance, CatalystCondition, UnitCo2Emissions, Co2Emissions, GPW, FuelGasOnDemand, FGProduction, FGImport, FGComp, ProductEmissions, PetChemSales, PetChemSalesPrice, CrudeSRYieldsAssayData, CrudeSRYieldSulWt, UnitUtilization, Unspecified
         :return: OutputTypeModel
                  If the method is called asynchronously,
                  returns the request thread.
         """
 
-        all_params = ['id']  # noqa: E501
+        all_params = ['id', 'output_types']  # noqa: E501
         all_params.append('async_req')
         all_params.append('_return_http_data_only')
         all_params.append('_preload_content')
@@ -374,6 +376,8 @@ class SimulationsApi(object):
             path_params['id'] = params['id']  # noqa: E501
 
         query_params = []
+        if 'output_types' in params:
+            query_params.append(('outputTypes', params['output_types']))  # noqa: E501
 
         header_params = {}
 
@@ -3403,6 +3407,107 @@ class SimulationsApi(object):
             post_params=form_params,
             files=local_var_files,
             response_type='ScheduleJobResponse',  # noqa: E501
+            auth_settings=auth_settings,
+            async_req=params.get('async_req'),
+            _return_http_data_only=params.get('_return_http_data_only'),
+            _preload_content=params.get('_preload_content', True),
+            _request_timeout=params.get('_request_timeout'),
+            collection_formats=collection_formats)
+
+    def v1_simulations_id_timetravel_patch(self, id, **kwargs):  # noqa: E501
+        """Enables or updates Time Travel settings for an existing simulation.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.v1_simulations_id_timetravel_patch(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: The id of the Simulation. (required)
+        :param TimeTravelSettingRequestModel body: The time travel settings including start and end date(format: yyyy-MM-dd), and time travel flag.
+        :return: ApiResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+        kwargs['_return_http_data_only'] = True
+        if kwargs.get('async_req'):
+            return self.v1_simulations_id_timetravel_patch_with_http_info(id, **kwargs)  # noqa: E501
+        else:
+            (data) = self.v1_simulations_id_timetravel_patch_with_http_info(id, **kwargs)  # noqa: E501
+            return data
+
+    def v1_simulations_id_timetravel_patch_with_http_info(self, id, **kwargs):  # noqa: E501
+        """Enables or updates Time Travel settings for an existing simulation.  # noqa: E501
+
+        This method makes a synchronous HTTP request by default. To make an
+        asynchronous HTTP request, please pass async_req=True
+        >>> thread = api.v1_simulations_id_timetravel_patch_with_http_info(id, async_req=True)
+        >>> result = thread.get()
+
+        :param async_req bool
+        :param str id: The id of the Simulation. (required)
+        :param TimeTravelSettingRequestModel body: The time travel settings including start and end date(format: yyyy-MM-dd), and time travel flag.
+        :return: ApiResponse
+                 If the method is called asynchronously,
+                 returns the request thread.
+        """
+
+        all_params = ['id', 'body']  # noqa: E501
+        all_params.append('async_req')
+        all_params.append('_return_http_data_only')
+        all_params.append('_preload_content')
+        all_params.append('_request_timeout')
+
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            if key not in all_params:
+                raise TypeError(
+                    "Got an unexpected keyword argument '%s'"
+                    " to method v1_simulations_id_timetravel_patch" % key
+                )
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'id' is set
+        if ('id' not in params or
+                params['id'] is None):
+            raise ValueError("Missing the required parameter `id` when calling `v1_simulations_id_timetravel_patch`")  # noqa: E501
+
+        collection_formats = {}
+
+        path_params = {}
+        if 'id' in params:
+            path_params['id'] = params['id']  # noqa: E501
+
+        query_params = []
+
+        header_params = {}
+
+        form_params = []
+        local_var_files = {}
+
+        body_params = None
+        if 'body' in params:
+            body_params = params['body']
+        # HTTP header `Accept`
+        header_params['Accept'] = self.api_client.select_header_accept(
+            ['application/json'])  # noqa: E501
+
+        # HTTP header `Content-Type`
+        header_params['Content-Type'] = self.api_client.select_header_content_type(  # noqa: E501
+            ['application/json'])  # noqa: E501
+
+        # Authentication setting
+        auth_settings = []  # noqa: E501
+
+        return self.api_client.call_api(
+            '/v1/simulations/{id}/timetravel', 'PATCH',
+            path_params,
+            query_params,
+            header_params,
+            body=body_params,
+            post_params=form_params,
+            files=local_var_files,
+            response_type='ApiResponse',  # noqa: E501
             auth_settings=auth_settings,
             async_req=params.get('async_req'),
             _return_http_data_only=params.get('_return_http_data_only'),

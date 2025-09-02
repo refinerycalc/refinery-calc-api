@@ -4,6 +4,7 @@ from __future__ import absolute_import
 
 # import apis into api package
 from refinerycalc.api.crudes_api import CrudesApi
+from refinerycalc.api.custom_aggregate_api import CustomAggregateApi
 from refinerycalc.api.end_points_api import EndPointsApi
 from refinerycalc.api.product_prices_api import ProductPricesApi
 from refinerycalc.api.rate_api import RateApi
