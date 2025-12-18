@@ -19,8 +19,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.WeatherForecastApi()
+api_instance = refinerycalc.WeatherForecastApi(refinerycalc.ApiClient(configuration))
 api_version = 'api_version_example' # str |  (optional)
 accept_version = 'accept_version_example' # str |  (optional)
 
@@ -44,7 +50,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 

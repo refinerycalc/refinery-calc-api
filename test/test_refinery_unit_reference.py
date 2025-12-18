@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.refinery_unit_reference import RefineryUnitReference  # noqa: E501
+from models.refinery_unit_reference import RefineryUnitReference  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

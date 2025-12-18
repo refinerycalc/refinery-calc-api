@@ -24,8 +24,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.RefineriesApi()
+api_instance = refinerycalc.RefineriesApi(refinerycalc.ApiClient(configuration))
 data_source = refinerycalc.DataSource() # DataSource |  (optional)
 name = 'name_example' # str |  (optional)
 region = 'region_example' # str |  (optional)
@@ -54,7 +60,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -76,8 +82,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.RefineriesApi()
+api_instance = refinerycalc.RefineriesApi(refinerycalc.ApiClient(configuration))
 data_source = refinerycalc.DataSource() # DataSource |  (optional)
 name = 'name_example' # str |  (optional)
 region = 'region_example' # str |  (optional)
@@ -110,7 +122,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -132,8 +144,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.RefineriesApi()
+api_instance = refinerycalc.RefineriesApi(refinerycalc.ApiClient(configuration))
 id = 56 # int | Refinery Id
 
 try:
@@ -156,7 +174,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -178,8 +196,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.RefineriesApi()
+api_instance = refinerycalc.RefineriesApi(refinerycalc.ApiClient(configuration))
 id = 56 # int | 
 
 try:
@@ -202,7 +226,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -224,8 +248,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.RefineriesApi()
+api_instance = refinerycalc.RefineriesApi(refinerycalc.ApiClient(configuration))
 id = 56 # int | 
 
 try:
@@ -248,7 +278,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -270,8 +300,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.RefineriesApi()
+api_instance = refinerycalc.RefineriesApi(refinerycalc.ApiClient(configuration))
 data_source = refinerycalc.DataSource() # DataSource |  (optional)
 name = 'name_example' # str |  (optional)
 region = 'region_example' # str |  (optional)
@@ -300,7 +336,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 

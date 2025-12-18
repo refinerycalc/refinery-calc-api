@@ -50,6 +50,7 @@ class CalculatorRefineryModel(object):
         'kero_fix_volume': 'float',
         'is_user_default': 'bool',
         'excel_output': 'str',
+        'excel_blob_reference': 'str',
         'pdf_output': 'str',
         'calculator': 'CalculatorModel',
         'refinery': 'RefineryModel',
@@ -130,6 +131,7 @@ class CalculatorRefineryModel(object):
         'kero_fix_volume': 'keroFixVolume',
         'is_user_default': 'isUserDefault',
         'excel_output': 'excelOutput',
+        'excel_blob_reference': 'excelBlobReference',
         'pdf_output': 'pdfOutput',
         'calculator': 'calculator',
         'refinery': 'refinery',
@@ -188,7 +190,7 @@ class CalculatorRefineryModel(object):
         'refinery_number': 'refineryNumber'
     }
 
-    def __init__(self, crudes_graph=None, constraints_graph=None, hydrogen_graph=None, crude_composition_graph=None, products_graph=None, c_o2_emission_graph=None, gpw_crude_graph=None, id=None, name=None, guid=None, notes=None, is_engine_mode=None, is_time_series=None, has_time_series_file=None, crude_mode=None, end_point_mode=None, intermediate_product=None, kero_mode=None, kero_fix_volume=None, is_user_default=None, excel_output=None, pdf_output=None, calculator=None, refinery=None, units=None, crudes=None, all_crudes=None, light_crudes=None, intermediate_crudes=None, heavy_crudes=None, product_prices=None, end_points=None, user_prices=None, crude_price_output_model=None, is_template=None, outputs=None, is_user_price_data_missing=None, calculator_refinery_crude_ids=None, crude_price_reference_crude_id=None, crude_price_reference_crude_price=None, historical_price_date=None, propylene_mode=None, pc_naphtha_sales=None, propylene_price=None, pc_naphtha_sale_price=None, pc_naphtha_sale_vol=None, crude_assay_viewer_mode=None, time_travel_start_date=None, time_travel_end_date=None, product_price_unit_type=None, apply_all_crude_composition=None, use_design_mode=None, use_future_mode=None, is_iir_refinery=None, carbon_penalty=None, reid_vapor_pressure=None, blue_hydrogen_percent=None, blue_hydrogen_price=None, green_hydrogen_percent=None, green_hydrogen_price=None, grey_hydrogen_percent=None, grey_hydrogen_price=None, purchase_vgo=None, message=None, success=None, user_price_list_id=None, user_price_list_date=None, is_crude_valuation=None, crude_evaluation_mode=None, is_crude_price_mode=None, is_crude_favorability_mode=None, is_aggregate=None, refinery_id=None, is_setup_complete=None, custom_aggregate_name=None, custom_aggregate_id=None, refinery_number=None):  # noqa: E501
+    def __init__(self, crudes_graph=None, constraints_graph=None, hydrogen_graph=None, crude_composition_graph=None, products_graph=None, c_o2_emission_graph=None, gpw_crude_graph=None, id=None, name=None, guid=None, notes=None, is_engine_mode=None, is_time_series=None, has_time_series_file=None, crude_mode=None, end_point_mode=None, intermediate_product=None, kero_mode=None, kero_fix_volume=None, is_user_default=None, excel_output=None, excel_blob_reference=None, pdf_output=None, calculator=None, refinery=None, units=None, crudes=None, all_crudes=None, light_crudes=None, intermediate_crudes=None, heavy_crudes=None, product_prices=None, end_points=None, user_prices=None, crude_price_output_model=None, is_template=None, outputs=None, is_user_price_data_missing=None, calculator_refinery_crude_ids=None, crude_price_reference_crude_id=None, crude_price_reference_crude_price=None, historical_price_date=None, propylene_mode=None, pc_naphtha_sales=None, propylene_price=None, pc_naphtha_sale_price=None, pc_naphtha_sale_vol=None, crude_assay_viewer_mode=None, time_travel_start_date=None, time_travel_end_date=None, product_price_unit_type=None, apply_all_crude_composition=None, use_design_mode=None, use_future_mode=None, is_iir_refinery=None, carbon_penalty=None, reid_vapor_pressure=None, blue_hydrogen_percent=None, blue_hydrogen_price=None, green_hydrogen_percent=None, green_hydrogen_price=None, grey_hydrogen_percent=None, grey_hydrogen_price=None, purchase_vgo=None, message=None, success=None, user_price_list_id=None, user_price_list_date=None, is_crude_valuation=None, crude_evaluation_mode=None, is_crude_price_mode=None, is_crude_favorability_mode=None, is_aggregate=None, refinery_id=None, is_setup_complete=None, custom_aggregate_name=None, custom_aggregate_id=None, refinery_number=None):  # noqa: E501
         """CalculatorRefineryModel - a model defined in Swagger"""  # noqa: E501
         self._crudes_graph = None
         self._constraints_graph = None
@@ -211,6 +213,7 @@ class CalculatorRefineryModel(object):
         self._kero_fix_volume = None
         self._is_user_default = None
         self._excel_output = None
+        self._excel_blob_reference = None
         self._pdf_output = None
         self._calculator = None
         self._refinery = None
@@ -310,6 +313,8 @@ class CalculatorRefineryModel(object):
             self.is_user_default = is_user_default
         if excel_output is not None:
             self.excel_output = excel_output
+        if excel_blob_reference is not None:
+            self.excel_blob_reference = excel_blob_reference
         if pdf_output is not None:
             self.pdf_output = pdf_output
         if calculator is not None:
@@ -863,6 +868,27 @@ class CalculatorRefineryModel(object):
         """
 
         self._excel_output = excel_output
+
+    @property
+    def excel_blob_reference(self):
+        """Gets the excel_blob_reference of this CalculatorRefineryModel.  # noqa: E501
+
+
+        :return: The excel_blob_reference of this CalculatorRefineryModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._excel_blob_reference
+
+    @excel_blob_reference.setter
+    def excel_blob_reference(self, excel_blob_reference):
+        """Sets the excel_blob_reference of this CalculatorRefineryModel.
+
+
+        :param excel_blob_reference: The excel_blob_reference of this CalculatorRefineryModel.  # noqa: E501
+        :type: str
+        """
+
+        self._excel_blob_reference = excel_blob_reference
 
     @property
     def pdf_output(self):

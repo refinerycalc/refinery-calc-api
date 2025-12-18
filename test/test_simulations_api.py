@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.api.simulations_api import SimulationsApi  # noqa: E501
+from api.simulations_api import SimulationsApi  # noqa: E501
 from refinerycalc.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestSimulationsApi(unittest.TestCase):
     """SimulationsApi unit test stubs"""
 
     def setUp(self):
-        self.api = SimulationsApi()  # noqa: E501
+        self.api = api.simulations_api.SimulationsApi()  # noqa: E501
 
     def tearDown(self):
         pass
@@ -52,7 +52,7 @@ class TestSimulationsApi(unittest.TestCase):
     def test_v1_simulations_id_output_get(self):
         """Test case for v1_simulations_id_output_get
 
-        Retrieves a OutputModel for the given input simuation Id.  # noqa: E501
+        Retrieves the RefineryCalculator.Core.Models.OutputTypeModel for the specified simulation ID,   optionally filtering results by output types and their corresponding subtypes (names).  # noqa: E501
         """
         pass
 
@@ -261,6 +261,13 @@ class TestSimulationsApi(unittest.TestCase):
         """Test case for v1_simulations_id_schedule_post
 
         Schedule a simulation to run  # noqa: E501
+        """
+        pass
+
+    def test_v1_simulations_id_timetravel_patch(self):
+        """Test case for v1_simulations_id_timetravel_patch
+
+        Enables or updates Time Travel settings for an existing simulation.  # noqa: E501
         """
         pass
 

@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.filter_operator import FilterOperator  # noqa: E501
+from models.filter_operator import FilterOperator  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

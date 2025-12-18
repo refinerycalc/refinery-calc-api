@@ -13,6 +13,7 @@ Name | Type | Description | Notes
 **display_order** | **int** |  | [optional] 
 **day_number** | **int** |  | [optional] 
 **calculator_refinery_id** | **int** |  | [optional] 
+**time_travel_date** | **datetime** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

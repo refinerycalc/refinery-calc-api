@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.advanced_options_batch_refinery import AdvancedOptionsBatchRefinery  # noqa: E501
+from models.advanced_options_batch_refinery import AdvancedOptionsBatchRefinery  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

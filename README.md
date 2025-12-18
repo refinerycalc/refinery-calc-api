@@ -51,6 +51,12 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
 api_instance = refinerycalc.CrudesApi(refinerycalc.ApiClient(configuration))
 
@@ -69,8 +75,15 @@ All URIs are relative to */*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *CrudesApi* | [**v1_crudes_get**](docs/CrudesApi.md#v1_crudes_get) | **GET** /v1/crudes | Get all crudes
+*CustomAggregateApi* | [**v1_custom_aggregate_create_post**](docs/CustomAggregateApi.md#v1_custom_aggregate_create_post) | **POST** /v1/custom-aggregate/create | Create new Custom Aggregate.
+*CustomAggregateApi* | [**v1_custom_aggregate_get**](docs/CustomAggregateApi.md#v1_custom_aggregate_get) | **GET** /v1/custom-aggregate | Get all Custom Aggregates. Optional filtering by name or pricing region.
+*CustomAggregateApi* | [**v1_custom_aggregate_id_delete_delete**](docs/CustomAggregateApi.md#v1_custom_aggregate_id_delete_delete) | **DELETE** /v1/custom-aggregate/{id}/delete | Delete Custom Aggregate.
+*CustomAggregateApi* | [**v1_custom_aggregate_id_update_patch**](docs/CustomAggregateApi.md#v1_custom_aggregate_id_update_patch) | **PATCH** /v1/custom-aggregate/{id}/update | Update existing Custom Aggregate.
 *EndPointsApi* | [**v1_endpoints_get**](docs/EndPointsApi.md#v1_endpoints_get) | **GET** /v1/endpoints | Returns end point list
 *EndPointsApi* | [**v1_endpoints_id_get**](docs/EndPointsApi.md#v1_endpoints_id_get) | **GET** /v1/endpoints/{id} | Get end point by id
+*HydrogenIGMarketApi* | [**v1_hydrogen_igmarket_countries_get**](docs/HydrogenIGMarketApi.md#v1_hydrogen_igmarket_countries_get) | **GET** /v1/hydrogen/igmarket/countries | Get list of available countries for Hydrogen IG Market pricing
+*HydrogenIGMarketApi* | [**v1_hydrogen_igmarket_prices_get**](docs/HydrogenIGMarketApi.md#v1_hydrogen_igmarket_prices_get) | **GET** /v1/hydrogen/igmarket/prices | Get Hydrogen IG Market prices by type with optional country and year filters
+*HydrogenIGMarketApi* | [**v1_hydrogen_igmarket_years_get**](docs/HydrogenIGMarketApi.md#v1_hydrogen_igmarket_years_get) | **GET** /v1/hydrogen/igmarket/years | Get list of available years for Hydrogen IG Market pricing
 *ProductPricesApi* | [**v1_product_prices_get**](docs/ProductPricesApi.md#v1_product_prices_get) | **GET** /v1/product/prices | Returns product price list
 *ProductPricesApi* | [**v1_product_prices_id_get**](docs/ProductPricesApi.md#v1_product_prices_id_get) | **GET** /v1/product/prices/{id} | Get product price by id
 *ProductPricesApi* | [**v1_product_prices_region_id_get**](docs/ProductPricesApi.md#v1_product_prices_region_id_get) | **GET** /v1/product/prices/region/{id} | Get product price by region id
@@ -86,7 +99,7 @@ Class | Method | HTTP request | Description
 *SimulationsApi* | [**v1_simulations_get**](docs/SimulationsApi.md#v1_simulations_get) | **GET** /v1/simulations | Returns simulation list
 *SimulationsApi* | [**v1_simulations_id_delete**](docs/SimulationsApi.md#v1_simulations_id_delete) | **DELETE** /v1/simulations/{id} | Delete a simulation
 *SimulationsApi* | [**v1_simulations_id_get**](docs/SimulationsApi.md#v1_simulations_id_get) | **GET** /v1/simulations/{id} | Returns simulations refineries details
-*SimulationsApi* | [**v1_simulations_id_output_get**](docs/SimulationsApi.md#v1_simulations_id_output_get) | **GET** /v1/simulations/{id}/output | Retrieves a OutputModel for the given input simuation Id.
+*SimulationsApi* | [**v1_simulations_id_output_get**](docs/SimulationsApi.md#v1_simulations_id_output_get) | **GET** /v1/simulations/{id}/output | Retrieves the RefineryCalculator.Core.Models.OutputTypeModel for the specified simulation ID,   optionally filtering results by output types and their corresponding subtypes (names).
 *SimulationsApi* | [**v1_simulations_id_refineries_advanced_options_patch**](docs/SimulationsApi.md#v1_simulations_id_refineries_advanced_options_patch) | **PATCH** /v1/simulations/{id}/refineries/advanced/options | Updates the advanced options for the given refineries
 *SimulationsApi* | [**v1_simulations_id_refineries_crude_allocation_patch**](docs/SimulationsApi.md#v1_simulations_id_refineries_crude_allocation_patch) | **PATCH** /v1/simulations/{id}/refineries/crude/allocation | Update Crude Allocation Value for One or More Refineries
 *SimulationsApi* | [**v1_simulations_id_refineries_crude_allocations_default_patch**](docs/SimulationsApi.md#v1_simulations_id_refineries_crude_allocations_default_patch) | **PATCH** /v1/simulations/{id}/refineries/crude/allocations/default | Refinery set default value for crude compositions
@@ -117,6 +130,7 @@ Class | Method | HTTP request | Description
 *SimulationsApi* | [**v1_simulations_id_run_status_get**](docs/SimulationsApi.md#v1_simulations_id_run_status_get) | **GET** /v1/simulations/{id}/run/status | Get simulation run status
 *SimulationsApi* | [**v1_simulations_id_schedule_delete**](docs/SimulationsApi.md#v1_simulations_id_schedule_delete) | **DELETE** /v1/simulations/{id}/schedule | Delete a simulation schedule.
 *SimulationsApi* | [**v1_simulations_id_schedule_post**](docs/SimulationsApi.md#v1_simulations_id_schedule_post) | **POST** /v1/simulations/{id}/schedule | Schedule a simulation to run
+*SimulationsApi* | [**v1_simulations_id_timetravel_patch**](docs/SimulationsApi.md#v1_simulations_id_timetravel_patch) | **PATCH** /v1/simulations/{id}/timetravel | Enables or updates Time Travel settings for an existing simulation.
 *SimulationsApi* | [**v1_simulations_post**](docs/SimulationsApi.md#v1_simulations_post) | **POST** /v1/simulations | Create a new simulation from a given list of refineries
 *SimulationsApi* | [**v1_simulations_schedules_get**](docs/SimulationsApi.md#v1_simulations_schedules_get) | **GET** /v1/simulations/schedules | Retrieves list of the scheduled simulations.
 *SimulationsApi* | [**v1_simulations_simulation_id_refineries_kero_mode_patch**](docs/SimulationsApi.md#v1_simulations_simulation_id_refineries_kero_mode_patch) | **PATCH** /v1/simulations/{simulation_id}/refineries/kero/mode | Update refinery kero mode
@@ -148,6 +162,9 @@ Class | Method | HTTP request | Description
  - [CrudePrice](docs/CrudePrice.md)
  - [CrudePriceModeCrude](docs/CrudePriceModeCrude.md)
  - [CrudeType](docs/CrudeType.md)
+ - [CustomAggregateAddEditRequestModel](docs/CustomAggregateAddEditRequestModel.md)
+ - [CustomAggregateDetailModel](docs/CustomAggregateDetailModel.md)
+ - [CustomAggregateRefieryItemModel](docs/CustomAggregateRefieryItemModel.md)
  - [DataSource](docs/DataSource.md)
  - [EndPointMode](docs/EndPointMode.md)
  - [EndPointModel](docs/EndPointModel.md)
@@ -155,11 +172,15 @@ Class | Method | HTTP request | Description
  - [FilterOperator](docs/FilterOperator.md)
  - [GetCalculatorRefineryCrudesResponse](docs/GetCalculatorRefineryCrudesResponse.md)
  - [GetRefineriesForSimulationResponse](docs/GetRefineriesForSimulationResponse.md)
+ - [GetSimulationRequestModel](docs/GetSimulationRequestModel.md)
  - [Graph](docs/Graph.md)
  - [GraphModel](docs/GraphModel.md)
  - [HealthState](docs/HealthState.md)
  - [HealthStateBatchRequest](docs/HealthStateBatchRequest.md)
  - [HealthStateBatchUnits](docs/HealthStateBatchUnits.md)
+ - [HydrogenIGMarketPriceApiResponseModel](docs/HydrogenIGMarketPriceApiResponseModel.md)
+ - [HydrogenIGMarketPriceUnit](docs/HydrogenIGMarketPriceUnit.md)
+ - [HydrogenIGMarketType](docs/HydrogenIGMarketType.md)
  - [IScheduledJob](docs/IScheduledJob.md)
  - [IntermediateProduct](docs/IntermediateProduct.md)
  - [KeroOptimizationMode](docs/KeroOptimizationMode.md)
@@ -169,6 +190,7 @@ Class | Method | HTTP request | Description
  - [OutputTypes](docs/OutputTypes.md)
  - [ProblemDetails](docs/ProblemDetails.md)
  - [ProductPriceModel](docs/ProductPriceModel.md)
+ - [ProductPriceRequestDateFilterModel](docs/ProductPriceRequestDateFilterModel.md)
  - [ProductPriceUomType](docs/ProductPriceUomType.md)
  - [RateLimitModel](docs/RateLimitModel.md)
  - [RefineryChangeIntermediateProductsRequestModel](docs/RefineryChangeIntermediateProductsRequestModel.md)
@@ -211,8 +233,11 @@ Class | Method | HTTP request | Description
  - [SimulationScheduleResponseModel](docs/SimulationScheduleResponseModel.md)
  - [SimulationScheduleRunModel](docs/SimulationScheduleRunModel.md)
  - [SolverOutputType](docs/SolverOutputType.md)
+ - [SortBy](docs/SortBy.md)
+ - [SortOrder](docs/SortOrder.md)
  - [TimeSeriesDay](docs/TimeSeriesDay.md)
  - [TimeSpan](docs/TimeSpan.md)
+ - [TimeTravelSettingRequestModel](docs/TimeTravelSettingRequestModel.md)
  - [TimeseriesAdvancedOptions](docs/TimeseriesAdvancedOptions.md)
  - [TimeseriesCrudeReference](docs/TimeseriesCrudeReference.md)
  - [TimeseriesCrudeUnitUtilization](docs/TimeseriesCrudeUnitUtilization.md)
@@ -232,7 +257,7 @@ Class | Method | HTTP request | Description
 ## Documentation For Authorization
 
 
-## Bearer
+## x-api-key
 
 - **Type**: API key
 - **API key parameter name**: x-api-key

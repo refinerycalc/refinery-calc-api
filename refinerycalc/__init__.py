@@ -18,6 +18,7 @@ from __future__ import absolute_import
 from refinerycalc.api.crudes_api import CrudesApi
 from refinerycalc.api.custom_aggregate_api import CustomAggregateApi
 from refinerycalc.api.end_points_api import EndPointsApi
+from refinerycalc.api.hydrogen_ig_market_api import HydrogenIGMarketApi
 from refinerycalc.api.product_prices_api import ProductPricesApi
 from refinerycalc.api.rate_api import RateApi
 from refinerycalc.api.refineries_api import RefineriesApi
@@ -68,6 +69,9 @@ from refinerycalc.models.graph_model import GraphModel
 from refinerycalc.models.health_state import HealthState
 from refinerycalc.models.health_state_batch_request import HealthStateBatchRequest
 from refinerycalc.models.health_state_batch_units import HealthStateBatchUnits
+from refinerycalc.models.hydrogen_ig_market_price_api_response_model import HydrogenIGMarketPriceApiResponseModel
+from refinerycalc.models.hydrogen_ig_market_price_unit import HydrogenIGMarketPriceUnit
+from refinerycalc.models.hydrogen_ig_market_type import HydrogenIGMarketType
 from refinerycalc.models.i_scheduled_job import IScheduledJob
 from refinerycalc.models.intermediate_product import IntermediateProduct
 from refinerycalc.models.kero_optimization_mode import KeroOptimizationMode

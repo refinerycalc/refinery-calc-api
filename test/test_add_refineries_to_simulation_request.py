@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.add_refineries_to_simulation_request import AddRefineriesToSimulationRequest  # noqa: E501
+from models.add_refineries_to_simulation_request import AddRefineriesToSimulationRequest  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

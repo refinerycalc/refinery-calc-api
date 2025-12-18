@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.health_state_batch_units import HealthStateBatchUnits  # noqa: E501
+from models.health_state_batch_units import HealthStateBatchUnits  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

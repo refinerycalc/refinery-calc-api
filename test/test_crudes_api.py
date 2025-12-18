@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.api.crudes_api import CrudesApi  # noqa: E501
+from api.crudes_api import CrudesApi  # noqa: E501
 from refinerycalc.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestCrudesApi(unittest.TestCase):
     """CrudesApi unit test stubs"""
 
     def setUp(self):
-        self.api = CrudesApi()  # noqa: E501
+        self.api = api.crudes_api.CrudesApi()  # noqa: E501
 
     def tearDown(self):
         pass

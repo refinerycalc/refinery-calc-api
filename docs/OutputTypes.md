@@ -28,6 +28,8 @@ Name | Type | Description | Notes
 **sustainability** | [**list[OutputDetails]**](OutputDetails.md) |  | [optional] 
 **unit_balance** | [**list[OutputDetails]**](OutputDetails.md) |  | [optional] 
 **unit_co2_emissions** | [**list[OutputDetails]**](OutputDetails.md) |  | [optional] 
+**crude_gpw** | [**list[OutputDetails]**](OutputDetails.md) |  | [optional] 
+**unit_utilization** | [**list[OutputDetails]**](OutputDetails.md) |  | [optional] 
 **unspecified** | [**list[OutputDetails]**](OutputDetails.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

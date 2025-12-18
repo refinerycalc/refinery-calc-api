@@ -42,6 +42,7 @@ class CalculatorModel(object):
         'is_crude_favorability_mode': 'bool',
         'pdf_output': 'str',
         'excel_output': 'str',
+        'excel_blob_reference': 'str',
         'notification_email': 'str',
         'timed_out': 'bool',
         'excel_output_exists': 'bool',
@@ -77,7 +78,8 @@ class CalculatorModel(object):
         'setup_complete_percentage': 'int',
         'is_setup_complete': 'bool',
         'crude_price_reference_crude_id': 'int',
-        'crude_price_reference_crude_price': 'float'
+        'crude_price_reference_crude_price': 'float',
+        'subjob_solve_status': 'str'
     }
 
     attribute_map = {
@@ -94,6 +96,7 @@ class CalculatorModel(object):
         'is_crude_favorability_mode': 'isCrudeFavorabilityMode',
         'pdf_output': 'pdfOutput',
         'excel_output': 'excelOutput',
+        'excel_blob_reference': 'excelBlobReference',
         'notification_email': 'notificationEmail',
         'timed_out': 'timedOut',
         'excel_output_exists': 'excelOutputExists',
@@ -129,10 +132,11 @@ class CalculatorModel(object):
         'setup_complete_percentage': 'setupCompletePercentage',
         'is_setup_complete': 'isSetupComplete',
         'crude_price_reference_crude_id': 'crudePriceReferenceCrudeId',
-        'crude_price_reference_crude_price': 'crudePriceReferenceCrudePrice'
+        'crude_price_reference_crude_price': 'crudePriceReferenceCrudePrice',
+        'subjob_solve_status': 'subjobSolveStatus'
     }
 
-    def __init__(self, notes=None, id=None, is_processed=None, is_deleted=None, percent_solved=None, notify_when_solved=None, is_solved=None, solve_status=None, start_time=None, stop_time=None, is_crude_favorability_mode=None, pdf_output=None, excel_output=None, notification_email=None, timed_out=None, excel_output_exists=None, data_source=None, refineries=None, prevent_delete=None, is_crude_fav_mode_output_exists=None, is_aggregate=None, is_time_travel=None, time_travel_start_date=None, time_travel_end_date=None, is_crude_valuation=None, is_solving=None, is_cancelled=None, is_engine_mode=None, duration=None, refinery_count=None, created_on=None, name=None, solve_time_remaining=None, modified_on=None, has_scheduled_runs=None, is_time_series=None, time_series_input_file=None, solver_machine_name=None, output_type=None, modified_on_humanize=None, duration_humanized=None, modified_on_ticks=None, calculator_id=None, crude_evaluation_mode=None, is_crude_price_mode=None, setup_complete_percentage=None, is_setup_complete=None, crude_price_reference_crude_id=None, crude_price_reference_crude_price=None):  # noqa: E501
+    def __init__(self, notes=None, id=None, is_processed=None, is_deleted=None, percent_solved=None, notify_when_solved=None, is_solved=None, solve_status=None, start_time=None, stop_time=None, is_crude_favorability_mode=None, pdf_output=None, excel_output=None, excel_blob_reference=None, notification_email=None, timed_out=None, excel_output_exists=None, data_source=None, refineries=None, prevent_delete=None, is_crude_fav_mode_output_exists=None, is_aggregate=None, is_time_travel=None, time_travel_start_date=None, time_travel_end_date=None, is_crude_valuation=None, is_solving=None, is_cancelled=None, is_engine_mode=None, duration=None, refinery_count=None, created_on=None, name=None, solve_time_remaining=None, modified_on=None, has_scheduled_runs=None, is_time_series=None, time_series_input_file=None, solver_machine_name=None, output_type=None, modified_on_humanize=None, duration_humanized=None, modified_on_ticks=None, calculator_id=None, crude_evaluation_mode=None, is_crude_price_mode=None, setup_complete_percentage=None, is_setup_complete=None, crude_price_reference_crude_id=None, crude_price_reference_crude_price=None, subjob_solve_status=None):  # noqa: E501
         """CalculatorModel - a model defined in Swagger"""  # noqa: E501
         self._notes = None
         self._id = None
@@ -147,6 +151,7 @@ class CalculatorModel(object):
         self._is_crude_favorability_mode = None
         self._pdf_output = None
         self._excel_output = None
+        self._excel_blob_reference = None
         self._notification_email = None
         self._timed_out = None
         self._excel_output_exists = None
@@ -183,6 +188,7 @@ class CalculatorModel(object):
         self._is_setup_complete = None
         self._crude_price_reference_crude_id = None
         self._crude_price_reference_crude_price = None
+        self._subjob_solve_status = None
         self.discriminator = None
         if notes is not None:
             self.notes = notes
@@ -210,6 +216,8 @@ class CalculatorModel(object):
             self.pdf_output = pdf_output
         if excel_output is not None:
             self.excel_output = excel_output
+        if excel_blob_reference is not None:
+            self.excel_blob_reference = excel_blob_reference
         if notification_email is not None:
             self.notification_email = notification_email
         if timed_out is not None:
@@ -282,6 +290,8 @@ class CalculatorModel(object):
             self.crude_price_reference_crude_id = crude_price_reference_crude_id
         if crude_price_reference_crude_price is not None:
             self.crude_price_reference_crude_price = crude_price_reference_crude_price
+        if subjob_solve_status is not None:
+            self.subjob_solve_status = subjob_solve_status
 
     @property
     def notes(self):
@@ -555,6 +565,27 @@ class CalculatorModel(object):
         """
 
         self._excel_output = excel_output
+
+    @property
+    def excel_blob_reference(self):
+        """Gets the excel_blob_reference of this CalculatorModel.  # noqa: E501
+
+
+        :return: The excel_blob_reference of this CalculatorModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._excel_blob_reference
+
+    @excel_blob_reference.setter
+    def excel_blob_reference(self, excel_blob_reference):
+        """Sets the excel_blob_reference of this CalculatorModel.
+
+
+        :param excel_blob_reference: The excel_blob_reference of this CalculatorModel.  # noqa: E501
+        :type: str
+        """
+
+        self._excel_blob_reference = excel_blob_reference
 
     @property
     def notification_email(self):
@@ -1311,6 +1342,27 @@ class CalculatorModel(object):
         """
 
         self._crude_price_reference_crude_price = crude_price_reference_crude_price
+
+    @property
+    def subjob_solve_status(self):
+        """Gets the subjob_solve_status of this CalculatorModel.  # noqa: E501
+
+
+        :return: The subjob_solve_status of this CalculatorModel.  # noqa: E501
+        :rtype: str
+        """
+        return self._subjob_solve_status
+
+    @subjob_solve_status.setter
+    def subjob_solve_status(self, subjob_solve_status):
+        """Sets the subjob_solve_status of this CalculatorModel.
+
+
+        :param subjob_solve_status: The subjob_solve_status of this CalculatorModel.  # noqa: E501
+        :type: str
+        """
+
+        self._subjob_solve_status = subjob_solve_status
 
     def to_dict(self):
         """Returns the model properties as a dict"""

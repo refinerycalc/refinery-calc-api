@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.run_mode import RunMode  # noqa: E501
+from models.run_mode import RunMode  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

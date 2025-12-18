@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.schedule_job_response import ScheduleJobResponse  # noqa: E501
+from models.schedule_job_response import ScheduleJobResponse  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

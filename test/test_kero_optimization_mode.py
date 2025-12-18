@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.kero_optimization_mode import KeroOptimizationMode  # noqa: E501
+from models.kero_optimization_mode import KeroOptimizationMode  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

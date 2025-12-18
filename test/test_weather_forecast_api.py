@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.api.weather_forecast_api import WeatherForecastApi  # noqa: E501
+from api.weather_forecast_api import WeatherForecastApi  # noqa: E501
 from refinerycalc.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestWeatherForecastApi(unittest.TestCase):
     """WeatherForecastApi unit test stubs"""
 
     def setUp(self):
-        self.api = WeatherForecastApi()  # noqa: E501
+        self.api = api.weather_forecast_api.WeatherForecastApi()  # noqa: E501
 
     def tearDown(self):
         pass

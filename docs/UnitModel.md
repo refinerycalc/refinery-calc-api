@@ -11,6 +11,8 @@ Name | Type | Description | Notes
 **is_shutdown** | **bool** |  | [optional] 
 **can_edit_health_state** | **bool** |  | [optional] 
 **health_state** | [**HealthState**](HealthState.md) |  | [optional] 
+**refinery_unit_id** | **int** |  | [optional] 
+**refinery_unit_name** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

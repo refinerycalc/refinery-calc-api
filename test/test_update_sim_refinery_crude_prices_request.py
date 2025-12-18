@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.update_sim_refinery_crude_prices_request import UpdateSimRefineryCrudePricesRequest  # noqa: E501
+from models.update_sim_refinery_crude_prices_request import UpdateSimRefineryCrudePricesRequest  # noqa: E501
 from refinerycalc.rest import ApiException
 
 
