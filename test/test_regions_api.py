@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.api.regions_api import RegionsApi  # noqa: E501
+from api.regions_api import RegionsApi  # noqa: E501
 from refinerycalc.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestRegionsApi(unittest.TestCase):
     """RegionsApi unit test stubs"""
 
     def setUp(self):
-        self.api = RegionsApi()  # noqa: E501
+        self.api = api.regions_api.RegionsApi()  # noqa: E501
 
     def tearDown(self):
         pass

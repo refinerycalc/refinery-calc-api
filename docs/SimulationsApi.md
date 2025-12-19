@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**v1_simulations_get**](SimulationsApi.md#v1_simulations_get) | **GET** /v1/simulations | Returns simulation list
 [**v1_simulations_id_delete**](SimulationsApi.md#v1_simulations_id_delete) | **DELETE** /v1/simulations/{id} | Delete a simulation
 [**v1_simulations_id_get**](SimulationsApi.md#v1_simulations_id_get) | **GET** /v1/simulations/{id} | Returns simulations refineries details
-[**v1_simulations_id_output_get**](SimulationsApi.md#v1_simulations_id_output_get) | **GET** /v1/simulations/{id}/output | Retrieves a OutputModel for the given input simuation Id.
+[**v1_simulations_id_output_get**](SimulationsApi.md#v1_simulations_id_output_get) | **GET** /v1/simulations/{id}/output | Retrieves the RefineryCalculator.Core.Models.OutputTypeModel for the specified simulation ID,   optionally filtering results by output types and their corresponding subtypes (names).
 [**v1_simulations_id_refineries_advanced_options_patch**](SimulationsApi.md#v1_simulations_id_refineries_advanced_options_patch) | **PATCH** /v1/simulations/{id}/refineries/advanced/options | Updates the advanced options for the given refineries
 [**v1_simulations_id_refineries_crude_allocation_patch**](SimulationsApi.md#v1_simulations_id_refineries_crude_allocation_patch) | **PATCH** /v1/simulations/{id}/refineries/crude/allocation | Update Crude Allocation Value for One or More Refineries
 [**v1_simulations_id_refineries_crude_allocations_default_patch**](SimulationsApi.md#v1_simulations_id_refineries_crude_allocations_default_patch) | **PATCH** /v1/simulations/{id}/refineries/crude/allocations/default | Refinery set default value for crude compositions
@@ -38,12 +38,13 @@ Method | HTTP request | Description
 [**v1_simulations_id_run_status_get**](SimulationsApi.md#v1_simulations_id_run_status_get) | **GET** /v1/simulations/{id}/run/status | Get simulation run status
 [**v1_simulations_id_schedule_delete**](SimulationsApi.md#v1_simulations_id_schedule_delete) | **DELETE** /v1/simulations/{id}/schedule | Delete a simulation schedule.
 [**v1_simulations_id_schedule_post**](SimulationsApi.md#v1_simulations_id_schedule_post) | **POST** /v1/simulations/{id}/schedule | Schedule a simulation to run
+[**v1_simulations_id_timetravel_patch**](SimulationsApi.md#v1_simulations_id_timetravel_patch) | **PATCH** /v1/simulations/{id}/timetravel | Enables or updates Time Travel settings for an existing simulation.
 [**v1_simulations_post**](SimulationsApi.md#v1_simulations_post) | **POST** /v1/simulations | Create a new simulation from a given list of refineries
 [**v1_simulations_schedules_get**](SimulationsApi.md#v1_simulations_schedules_get) | **GET** /v1/simulations/schedules | Retrieves list of the scheduled simulations.
 [**v1_simulations_simulation_id_refineries_kero_mode_patch**](SimulationsApi.md#v1_simulations_simulation_id_refineries_kero_mode_patch) | **PATCH** /v1/simulations/{simulation_id}/refineries/kero/mode | Update refinery kero mode
 
 # **v1_simulations_get**
-> SimulationResponse v1_simulations_get()
+> SimulationResponse v1_simulations_get(body=body)
 
 Returns simulation list
 
@@ -55,19 +56,29 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
+body = refinerycalc.GetSimulationRequestModel() # GetSimulationRequestModel |  (optional)
 
 try:
     # Returns simulation list
-    api_response = api_instance.v1_simulations_get()
+    api_response = api_instance.v1_simulations_get(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SimulationsApi->v1_simulations_get: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**GetSimulationRequestModel**](GetSimulationRequestModel.md)|  | [optional] 
 
 ### Return type
 
@@ -75,11 +86,11 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -97,8 +108,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
@@ -121,7 +138,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -143,8 +160,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
@@ -167,7 +190,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -177,9 +200,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **v1_simulations_id_output_get**
-> OutputTypeModel v1_simulations_id_output_get(id)
+> OutputTypeModel v1_simulations_id_output_get(id, output_types=output_types)
 
-Retrieves a OutputModel for the given input simuation Id.
+Retrieves the RefineryCalculator.Core.Models.OutputTypeModel for the specified simulation ID,   optionally filtering results by output types and their corresponding subtypes (names).
 
 ### Example
 ```python
@@ -189,13 +212,20 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
-id = 'id_example' # str | Simulation Id
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
+id = 'id_example' # str | The simulation ID.
+output_types = 'output_types_example' # str | (Optional) A comma-separated list of output types with optional subtypes (names) to filter the results.    Syntax:   ?outputTypes=[outputType][:subType1|subType2|subType3],[outputType][:subType1|subType2]    Examples:  • ?outputTypes=general:Refinery Name|Location|PADD,economics:Revenue|Total Margin|Net Operating Margin    • ?outputTypes=general:Refinery Name,economics    If not specified, all available output types will be included in the response. Available values: Balance, Complexity, Constraints, CrudeNames, CrudePercent, CrudePricing, CrudeQuality, CrudesAndFeeds, DeleteCategory, Economics, EndPointsF, ExpenseFactors, FCCHydrkConv, FeedsPricing, GasolineBlending, General, Hydrogen, ProductPricing, Products, RefineryLayoutSVG, Sustainability, UnitBalance, CatalystCondition, UnitCo2Emissions, Co2Emissions, GPW, FuelGasOnDemand, FGProduction, FGImport, FGComp, ProductEmissions, PetChemSales, PetChemSalesPrice, CrudeSRYieldsAssayData, CrudeSRYieldSulWt, UnitUtilization, Unspecified (optional)
 
 try:
-    # Retrieves a OutputModel for the given input simuation Id.
-    api_response = api_instance.v1_simulations_id_output_get(id)
+    # Retrieves the RefineryCalculator.Core.Models.OutputTypeModel for the specified simulation ID,   optionally filtering results by output types and their corresponding subtypes (names).
+    api_response = api_instance.v1_simulations_id_output_get(id, output_types=output_types)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling SimulationsApi->v1_simulations_id_output_get: %s\n" % e)
@@ -205,7 +235,8 @@ except ApiException as e:
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **id** | **str**| Simulation Id | 
+ **id** | **str**| The simulation ID. | 
+ **output_types** | **str**| (Optional) A comma-separated list of output types with optional subtypes (names) to filter the results.    Syntax:   ?outputTypes&#x3D;[outputType][:subType1|subType2|subType3],[outputType][:subType1|subType2]    Examples:  • ?outputTypes&#x3D;general:Refinery Name|Location|PADD,economics:Revenue|Total Margin|Net Operating Margin    • ?outputTypes&#x3D;general:Refinery Name,economics    If not specified, all available output types will be included in the response. Available values: Balance, Complexity, Constraints, CrudeNames, CrudePercent, CrudePricing, CrudeQuality, CrudesAndFeeds, DeleteCategory, Economics, EndPointsF, ExpenseFactors, FCCHydrkConv, FeedsPricing, GasolineBlending, General, Hydrogen, ProductPricing, Products, RefineryLayoutSVG, Sustainability, UnitBalance, CatalystCondition, UnitCo2Emissions, Co2Emissions, GPW, FuelGasOnDemand, FGProduction, FGImport, FGComp, ProductEmissions, PetChemSales, PetChemSalesPrice, CrudeSRYieldsAssayData, CrudeSRYieldSulWt, UnitUtilization, Unspecified | [optional] 
 
 ### Return type
 
@@ -213,7 +244,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -235,8 +266,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.AdvancedOptionsBatchRequest() # AdvancedOptionsBatchRequest |  (optional)
 
@@ -261,7 +298,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -283,8 +320,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.UpdateSimRefineryCrudeAllocationRequest() # UpdateSimRefineryCrudeAllocationRequest | the list of refineries with their crude allocations (optional)
 
@@ -309,7 +352,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -331,8 +374,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 body = refinerycalc.RefineryUseDefaultRequestModel() # RefineryUseDefaultRequestModel |  (optional)
 
@@ -357,7 +406,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -379,8 +428,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 body = refinerycalc.RefineryUseDefaultRequestModel() # RefineryUseDefaultRequestModel |  (optional)
 
@@ -405,7 +460,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -427,8 +482,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.UpdateSimRefineryCrudePricesRequest() # UpdateSimRefineryCrudePricesRequest | the list of refineries with their crude prices (optional)
 
@@ -453,7 +514,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -475,8 +536,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.UpdateSimulationRefineryCrudeRequest() # UpdateSimulationRefineryCrudeRequest | the list of refineries with refinery crude ids and crudes (optional)
 
@@ -501,7 +568,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -523,8 +590,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 body = refinerycalc.ChangeEndPointModeRequest() # ChangeEndPointModeRequest |  (optional)
 
@@ -549,7 +622,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -571,8 +644,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 body = refinerycalc.RefineryUseDefaultRequestModel() # RefineryUseDefaultRequestModel |  (optional)
 
@@ -597,7 +676,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -619,8 +698,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
@@ -643,7 +728,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -665,8 +750,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 body = refinerycalc.RefineryChangeIntermediateProductsRequestModel() # RefineryChangeIntermediateProductsRequestModel |  (optional)
 
@@ -690,7 +781,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -712,8 +803,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | The id of the simulation
 body = refinerycalc.AddRefineriesToSimulationRequest() # AddRefineriesToSimulationRequest |  (optional)
 
@@ -738,7 +835,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -760,8 +857,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 body = refinerycalc.RefineryUseDefaultRequestModel() # RefineryUseDefaultRequestModel |  (optional)
 
@@ -786,7 +889,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -808,8 +911,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 body = refinerycalc.SaveRefineryProductPriceRequestModel() # SaveRefineryProductPriceRequestModel |  (optional)
 
@@ -834,7 +943,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -856,8 +965,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 refinery_id = 56 # int | 
 
@@ -881,7 +996,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -903,8 +1018,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | The id of the simulation
 refinery_id = 56 # int | The id of the refinery
 
@@ -929,7 +1050,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -951,8 +1072,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 refinery_id = 56 # int | 
 
@@ -977,7 +1104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -999,8 +1126,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 refinery_id = 56 # int | 
 
@@ -1025,7 +1158,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1047,8 +1180,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 refinery_id = 56 # int | 
 
@@ -1073,7 +1212,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1095,8 +1234,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.RefineryChangeUnitRequestModel() # RefineryChangeUnitRequestModel |  (optional)
 
@@ -1121,7 +1266,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1143,8 +1288,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 body = refinerycalc.RefineryUseDefaultRequestModel() # RefineryUseDefaultRequestModel |  (optional)
 
@@ -1169,7 +1320,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1191,8 +1342,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.HealthStateBatchRequest() # HealthStateBatchRequest |  (optional)
 
@@ -1217,7 +1374,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1239,8 +1396,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.RefineryChangeUnitModeRequestModel() # RefineryChangeUnitModeRequestModel |  (optional)
 
@@ -1265,7 +1428,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1287,8 +1450,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.RefineryChangeUnitRequestModel() # RefineryChangeUnitRequestModel |  (optional)
 
@@ -1313,7 +1482,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1335,8 +1504,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.RefineryToggleUnitStatusRequestModel() # RefineryToggleUnitStatusRequestModel |  (optional)
 
@@ -1361,7 +1536,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1383,8 +1558,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 body = refinerycalc.ChangeEndPointRequest() # ChangeEndPointRequest |  (optional)
 
@@ -1409,7 +1590,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1431,8 +1612,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.SimulationRenameRequestModel() # SimulationRenameRequestModel |  (optional)
 
@@ -1457,7 +1644,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1479,8 +1666,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | simulation id
 body = refinerycalc.RunSimulationRequestModel() # RunSimulationRequestModel |  (optional)
 
@@ -1505,7 +1698,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1527,8 +1720,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | 
 
 try:
@@ -1551,7 +1750,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1573,8 +1772,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | The id of the Simulation
 
 try:
@@ -1597,7 +1802,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1619,8 +1824,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 id = 'id_example' # str | Simulation Id
 body = refinerycalc.ScheduleSimulationRequestModel() # ScheduleSimulationRequestModel | SimulationRunRequestModel (optional)
 
@@ -1645,7 +1856,61 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **v1_simulations_id_timetravel_patch**
+> ApiResponse v1_simulations_id_timetravel_patch(id, body=body)
+
+Enables or updates Time Travel settings for an existing simulation.
+
+### Example
+```python
+from __future__ import print_function
+import time
+import refinerycalc
+from refinerycalc.rest import ApiException
+from pprint import pprint
+
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
+# create an instance of the API class
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
+id = 'id_example' # str | The id of the Simulation.
+body = refinerycalc.TimeTravelSettingRequestModel() # TimeTravelSettingRequestModel | The time travel settings including start and end date(format: yyyy-MM-dd), and time travel flag. (optional)
+
+try:
+    # Enables or updates Time Travel settings for an existing simulation.
+    api_response = api_instance.v1_simulations_id_timetravel_patch(id, body=body)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling SimulationsApi->v1_simulations_id_timetravel_patch: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **id** | **str**| The id of the Simulation. | 
+ **body** | [**TimeTravelSettingRequestModel**](TimeTravelSettingRequestModel.md)| The time travel settings including start and end date(format: yyyy-MM-dd), and time travel flag. | [optional] 
+
+### Return type
+
+[**ApiResponse**](ApiResponse.md)
+
+### Authorization
+
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1667,8 +1932,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 body = refinerycalc.CreateSimulationRequest() # CreateSimulationRequest |  (optional)
 
 try:
@@ -1691,7 +1962,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1713,8 +1984,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 
 try:
     # Retrieves list of the scheduled simulations.
@@ -1733,7 +2010,7 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -1755,8 +2032,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.SimulationsApi()
+api_instance = refinerycalc.SimulationsApi(refinerycalc.ApiClient(configuration))
 simulation_id = 'simulation_id_example' # str | simulation id
 body = refinerycalc.RefineryChangeKeroModeRequestModel() # RefineryChangeKeroModeRequestModel |  (optional)
 
@@ -1781,7 +2064,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 

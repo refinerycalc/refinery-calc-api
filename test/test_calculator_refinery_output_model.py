@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.calculator_refinery_output_model import CalculatorRefineryOutputModel  # noqa: E501
+from models.calculator_refinery_output_model import CalculatorRefineryOutputModel  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

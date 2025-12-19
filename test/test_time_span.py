@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.time_span import TimeSpan  # noqa: E501
+from models.time_span import TimeSpan  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

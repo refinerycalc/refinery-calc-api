@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.unit_toggle_shutdown_status_response_model import UnitToggleShutdownStatusResponseModel  # noqa: E501
+from models.unit_toggle_shutdown_status_response_model import UnitToggleShutdownStatusResponseModel  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

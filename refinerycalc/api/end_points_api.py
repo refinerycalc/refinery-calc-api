@@ -99,7 +99,7 @@ class EndPointsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/endpoints', 'GET',
@@ -192,7 +192,7 @@ class EndPointsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/endpoints/{id}', 'GET',

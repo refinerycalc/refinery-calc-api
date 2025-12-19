@@ -9,6 +9,7 @@ Name | Type | Description | Notes
 **start_time** | **datetime** |  | [optional] 
 **stop_time** | **datetime** |  | [optional] 
 **duration_in_seconds** | **int** |  | [optional] 
+**time_travel_period** | **str** |  | [optional] 
 **output** | [**OutputTypes**](OutputTypes.md) |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)

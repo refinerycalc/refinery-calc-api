@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.timeseries_advanced_options import TimeseriesAdvancedOptions  # noqa: E501
+from models.timeseries_advanced_options import TimeseriesAdvancedOptions  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

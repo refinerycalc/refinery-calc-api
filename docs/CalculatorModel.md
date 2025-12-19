@@ -16,6 +16,7 @@ Name | Type | Description | Notes
 **is_crude_favorability_mode** | **bool** |  | [optional] 
 **pdf_output** | **str** |  | [optional] 
 **excel_output** | **str** |  | [optional] 
+**excel_blob_reference** | **str** |  | [optional] 
 **notification_email** | **str** |  | [optional] 
 **timed_out** | **bool** |  | [optional] 
 **excel_output_exists** | **bool** |  | [optional] 
@@ -23,6 +24,10 @@ Name | Type | Description | Notes
 **refineries** | [**list[CalculatorRefineryModel]**](CalculatorRefineryModel.md) |  | [optional] 
 **prevent_delete** | **bool** |  | [optional] 
 **is_crude_fav_mode_output_exists** | **bool** |  | [optional] 
+**is_aggregate** | **bool** |  | [optional] 
+**is_time_travel** | **bool** |  | [optional] 
+**time_travel_start_date** | **datetime** |  | [optional] 
+**time_travel_end_date** | **datetime** |  | [optional] 
 **is_crude_valuation** | **bool** |  | [optional] 
 **is_solving** | **bool** |  | [optional] 
 **is_cancelled** | **bool** |  | [optional] 
@@ -48,6 +53,7 @@ Name | Type | Description | Notes
 **is_setup_complete** | **bool** |  | [optional] 
 **crude_price_reference_crude_id** | **int** |  | [optional] 
 **crude_price_reference_crude_price** | **float** |  | [optional] 
+**subjob_solve_status** | **str** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

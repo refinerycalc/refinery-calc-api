@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.simulation_rename_request_model import SimulationRenameRequestModel  # noqa: E501
+from models.simulation_rename_request_model import SimulationRenameRequestModel  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

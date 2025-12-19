@@ -23,6 +23,8 @@ Name | Type | Description | Notes
 **display_order** | **int** |  | [optional] 
 **country** | **str** |  | [optional] 
 **rcci** | **float** |  | [optional] 
+**marker_crude** | **str** |  | [optional] 
+**is_marker_crude** | **bool** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

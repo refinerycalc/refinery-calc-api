@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.api.end_points_api import EndPointsApi  # noqa: E501
+from api.end_points_api import EndPointsApi  # noqa: E501
 from refinerycalc.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestEndPointsApi(unittest.TestCase):
     """EndPointsApi unit test stubs"""
 
     def setUp(self):
-        self.api = EndPointsApi()  # noqa: E501
+        self.api = api.end_points_api.EndPointsApi()  # noqa: E501
 
     def tearDown(self):
         pass

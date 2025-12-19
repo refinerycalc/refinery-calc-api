@@ -107,7 +107,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations', 'GET',
@@ -200,7 +200,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}', 'DELETE',
@@ -293,7 +293,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}', 'GET',
@@ -390,7 +390,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/output', 'GET',
@@ -491,7 +491,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/advanced/options', 'PATCH',
@@ -592,7 +592,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/crude/allocation', 'PATCH',
@@ -693,7 +693,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/crude/allocations/default', 'PATCH',
@@ -794,7 +794,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/crude/prices/default', 'PATCH',
@@ -895,7 +895,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/crude/prices', 'PATCH',
@@ -996,7 +996,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/crudes', 'PATCH',
@@ -1097,7 +1097,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/endpoint/mode', 'PATCH',
@@ -1198,7 +1198,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/endpoints/default', 'PATCH',
@@ -1291,7 +1291,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries', 'GET',
@@ -1392,7 +1392,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/intermediate/products', 'PATCH',
@@ -1493,7 +1493,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries', 'POST',
@@ -1594,7 +1594,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/product/prices/default', 'PATCH',
@@ -1695,7 +1695,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/product/prices', 'PATCH',
@@ -1796,7 +1796,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/{refineryId}/crude', 'GET',
@@ -1897,7 +1897,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/{refineryId}', 'DELETE',
@@ -1998,7 +1998,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/{refineryId}/endpoints', 'GET',
@@ -2099,7 +2099,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/{refineryId}/product/prices', 'GET',
@@ -2200,7 +2200,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/{refineryId}/units', 'GET',
@@ -2301,7 +2301,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/units/bias', 'PATCH',
@@ -2402,7 +2402,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/units/default', 'PATCH',
@@ -2503,7 +2503,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/units/health/state', 'PATCH',
@@ -2604,7 +2604,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/units/mode', 'PATCH',
@@ -2705,7 +2705,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/units/rate', 'PATCH',
@@ -2806,7 +2806,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refineries/units/toggle/shutdown/status', 'PATCH',
@@ -2907,7 +2907,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/refinery/change/endpoint', 'POST',
@@ -3008,7 +3008,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/rename', 'PATCH',
@@ -3109,7 +3109,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/run', 'POST',
@@ -3202,7 +3202,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/run/status', 'GET',
@@ -3295,7 +3295,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/schedule', 'DELETE',
@@ -3396,7 +3396,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/schedule', 'POST',
@@ -3497,7 +3497,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{id}/timetravel', 'PATCH',
@@ -3590,7 +3590,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations', 'POST',
@@ -3675,7 +3675,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/schedules', 'GET',
@@ -3776,7 +3776,7 @@ class SimulationsApi(object):
             ['application/json'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/v1/simulations/{simulation_id}/refineries/kero/mode', 'PATCH',

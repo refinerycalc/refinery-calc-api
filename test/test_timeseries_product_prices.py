@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.timeseries_product_prices import TimeseriesProductPrices  # noqa: E501
+from models.timeseries_product_prices import TimeseriesProductPrices  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

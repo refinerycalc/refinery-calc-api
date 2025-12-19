@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.api.rate_api import RateApi  # noqa: E501
+from api.rate_api import RateApi  # noqa: E501
 from refinerycalc.rest import ApiException
 
 
@@ -23,7 +23,7 @@ class TestRateApi(unittest.TestCase):
     """RateApi unit test stubs"""
 
     def setUp(self):
-        self.api = RateApi()  # noqa: E501
+        self.api = api.rate_api.RateApi()  # noqa: E501
 
     def tearDown(self):
         pass

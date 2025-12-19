@@ -107,7 +107,7 @@ class WeatherForecastApi(object):
             ['text/plain; api-version=1.0', 'application/json; api-version=1.0', 'text/json; api-version=1.0'])  # noqa: E501
 
         # Authentication setting
-        auth_settings = []  # noqa: E501
+        auth_settings = ['x-api-key']  # noqa: E501
 
         return self.api_client.call_api(
             '/weatherforecast', 'GET',

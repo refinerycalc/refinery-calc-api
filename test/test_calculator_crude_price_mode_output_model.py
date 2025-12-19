@@ -15,7 +15,7 @@ from __future__ import absolute_import
 import unittest
 
 import refinerycalc
-from refinerycalc.models.calculator_crude_price_mode_output_model import CalculatorCrudePriceModeOutputModel  # noqa: E501
+from models.calculator_crude_price_mode_output_model import CalculatorCrudePriceModeOutputModel  # noqa: E501
 from refinerycalc.rest import ApiException
 
 

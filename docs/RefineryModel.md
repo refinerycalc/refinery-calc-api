@@ -27,9 +27,13 @@ Name | Type | Description | Notes
 **market_segment** | **str** |  | [optional] 
 **state_or_province** | **str** |  | [optional] 
 **plant_id** | **str** |  | [optional] 
+**year_enabled** | **list[int]** |  | [optional] 
 **pad_district** | **str** |  | [optional] 
 **region** | **str** |  | [optional] 
 **crude_price_mode_crude_id** | **int** |  | [optional] 
+**custom_aggregate_id** | **int** |  | [optional] 
+**custom_aggregate_region_id** | **int** |  | [optional] 
+**refinery_number** | **int** |  | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

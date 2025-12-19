@@ -10,7 +10,7 @@ Method | HTTP request | Description
 [**v1_product_prices_region_region_name_get**](ProductPricesApi.md#v1_product_prices_region_region_name_get) | **GET** /v1/product/prices/region/{regionName} | Get product price by region
 
 # **v1_product_prices_get**
-> list[ProductPriceModel] v1_product_prices_get()
+> list[ProductPriceModel] v1_product_prices_get(body=body)
 
 Returns product price list
 
@@ -22,19 +22,29 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.ProductPricesApi()
+api_instance = refinerycalc.ProductPricesApi(refinerycalc.ApiClient(configuration))
+body = refinerycalc.ProductPriceRequestDateFilterModel() # ProductPriceRequestDateFilterModel |  (optional)
 
 try:
     # Returns product price list
-    api_response = api_instance.v1_product_prices_get()
+    api_response = api_instance.v1_product_prices_get(body=body)
     pprint(api_response)
 except ApiException as e:
     print("Exception when calling ProductPricesApi->v1_product_prices_get: %s\n" % e)
 ```
 
 ### Parameters
-This endpoint does not need any parameter.
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **body** | [**ProductPriceRequestDateFilterModel**](ProductPriceRequestDateFilterModel.md)|  | [optional] 
 
 ### Return type
 
@@ -42,11 +52,11 @@ This endpoint does not need any parameter.
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
- - **Content-Type**: Not defined
+ - **Content-Type**: application/json
  - **Accept**: application/json
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
@@ -64,8 +74,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.ProductPricesApi()
+api_instance = refinerycalc.ProductPricesApi(refinerycalc.ApiClient(configuration))
 id = 56 # int | The id of the product price
 
 try:
@@ -88,7 +104,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -110,8 +126,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.ProductPricesApi()
+api_instance = refinerycalc.ProductPricesApi(refinerycalc.ApiClient(configuration))
 id = 56 # int | region id
 
 try:
@@ -134,7 +156,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
@@ -156,8 +178,14 @@ import refinerycalc
 from refinerycalc.rest import ApiException
 from pprint import pprint
 
+# Configure API key authorization: x-api-key
+configuration = refinerycalc.Configuration()
+configuration.api_key['x-api-key'] = 'YOUR_API_KEY'
+# Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+# configuration.api_key_prefix['x-api-key'] = 'Bearer'
+
 # create an instance of the API class
-api_instance = refinerycalc.ProductPricesApi()
+api_instance = refinerycalc.ProductPricesApi(refinerycalc.ApiClient(configuration))
 region_name = 'region_name_example' # str | Region name
 
 try:
@@ -180,7 +208,7 @@ Name | Type | Description  | Notes
 
 ### Authorization
 
-No authorization required
+[x-api-key](../README.md#x-api-key)
 
 ### HTTP request headers
 
